@@ -39,7 +39,7 @@
      <elements>
       <date name="date" label="Date"/>
       <checkbox name="showDate" label="Show Date"/>
-      <text name="title" label="Title"/>
+      <text name="header" label="Title"/>
       <text name="subtitle" label="Subtitle"/>
       <text name="blurb" label="Blurb"/>
       <link name="link" label="Link"/>
@@ -68,13 +68,13 @@
 
   <objectType name="exhibitions" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
     <elements>
-      <text name="title" label="Title"/>
+      <text name="header" label="Title"/>
       <text name="blurb" label="blurb"/>
     </elements>
     <addableObject objectTypeName="exhibition" addText="Add an Exhibition"/>
   </objectType>
 
-  <objectType name="exhibiton" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="exhibition" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
     <elements>
       <date name="dateRange" label="Date Range"/>
       <text name="headline" label="Headline"/>
