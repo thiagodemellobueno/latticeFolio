@@ -5,51 +5,21 @@
 
   <objectTypes>
 
-    <objectType name="category" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-      <addableObject objectTypeName="article" addText="Add an Article" />
-    </objectType>
-
-    <objectType name="article" contentType="document" allowDelete="true" >
-      <elements>
-        <text name="multilineIPE" label="Body" isMultiline="true"/>
-        <image name="file" label="Single Image">
-          <resize name="test" width="96" height="58" forceDimension="height" /> 
-          <ext>jpg</ext>
-          <ext>tiff</ext>
-          <ext>tif</ext>
-        </image>
-      </elements>
-    </objectType>
-
-    <objectType name="editorOnlyObjectType" contentType="document" allowDelete="true" initialAccessRoles="editor" />
-
-    <objectType name="singleAssociator" contentType="document" allowDelete="true" >
-      <elements>
-        <associator name="myAssociation" label="My Association" lattice="myAssociation" metaObjectTypeName="meta" >
-          <filter objectTypeName="article"/>
-        </associator>
-      </elements>
-    </objectType>
-
-    <objectType name="meta">
-    </objectType>
-
+ 
 
     <objectType name="homePage" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
      <elements>
-      <date name="date" label="Date"/>
-      <checkbox name="showDate" label="Show Date"/>
       <text name="header" label="Title"/>
       <text name="subtitle" label="Subtitle"/>
       <text name="blurb" label="Blurb"/>
       <link name="link" label="Link"/>
+      <list name="homeGallery" label="Home Image Gallery">
+        <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
+      </list>
     </elements>
-    <components>
-      <component objectTypeName="imageGallery" label="ImageGallery"/>
-    </components>
   </objectType>
 
-  <objectType name="imageGallery" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="imageGallery" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
     <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
   </objectType>
 
@@ -83,11 +53,10 @@
       <file name="PDF" label="PDF">
         <ext>PDF</ext>
       </file>
+      <list name="exhibitionGallery" label="Exhibition Gallery">
+        <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
+      </list>
     </elements>
-    <components>
-      <component objectTypeName="imageGallery" label="ImageGallery"/>
-    </components>
-
   </objectType>
 
   <objectType name="artists" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
@@ -116,10 +85,11 @@
         <addableObject objectTypeName="artistLink" addText="Add a Link"/>
       </list>
     </elements>
+    <addableObject objectTypeName="cvListing" addText="Add a CV Listing"/>
     <components>
       <component objectTypeName="works" label="Works"/>
-      <component objectTypeName="cvListing" label="CV Listing"/>
     </components>
+  
   </objectType>
 
   <objectType name="artistLink" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
