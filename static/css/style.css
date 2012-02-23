@@ -91,7 +91,48 @@ footer ul li {margin:0; padding:0;}
 
 
 
+@media only screen and ( max-width: 799px ) {
+		div.slideshow .pane{
+			width: 100%;
+			overflow: auto;
+		}
+		div.slideshow img.galleryImage{
+			display: block;
+			float: left;
+			margin: 0 1em 1em 1em;
+		}
+		#main{
+			padding: 2em;
+		}
+		div.slideshow div.images{
+		    position:static;
+		}
+		footer { position:static; background:#fff;}
+		
+}
+@media only screen and ( min-width: 800px ) {
+  /* Style adjustments for viewports that meet the condition */
+	div.slideshow{
+	    position:relative;
+	    margin: 0 0 5em 0 !important;
+	}
 
+	div.slideshow .pane{
+	    overflow: hidden;   
+	}
+
+	div.slideshow div.images{
+	    position:relative;
+	    bottom:0;
+	    white-space: nowrap;
+			padding: 0 12em 0 15.125em;
+	}
+
+	div.slideshow img.galleryImage{
+	    display: inline-block;
+	    margin: 0 0 0 .5em;
+	}
+}
 
 @media only screen  {
 
@@ -104,43 +145,27 @@ footer ul li {margin:0; padding:0;}
 
 /* -- slideshow ------------------------------------------- */
 
-div.slideshow{
-    position:relative;
-    margin: 3em 0 !important;
-}
-
-div.slideshow .pane{
-    overflow: hidden;   
-}
-
-div.slideshow div.images{
-    position:relative;
-    bottom:0;
-    white-space: nowrap;
-}
-
-div.slideshow img.galleryImage{
-    display: inline-block;
-    margin: 0 0 0 .5em;
-}
 
 div.slideshow img.galleryImage:first-child{
     margin: 0 0 0 0;
 }
 
-div.slideshowPrev, 
-div.slideshowNext {
+div.slideshowPrev {
+		width:32px;
+    height: 100%;
     position:absolute;
-    height:100%;
-    width:64px;
     left:0; 
     z-index: 10000;
-    background: url(img/next_image.png) center center no-repeat;
+    background: url(../img/previous_image.png) center center no-repeat;
 }
 
 div.slideshowNext {
-    left:900px;
-	  background: url(img/previous_image.png) center center no-repeat;
+  	width:32px;
+		height: 100%;
+  	z-index: 10000;
+  	position:absolute;
+    right:0;
+	  background: url(../img/next_image.png) center center no-repeat;
 }
 
 div.slideshowPrev a,
