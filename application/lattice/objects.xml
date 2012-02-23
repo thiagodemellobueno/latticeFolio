@@ -61,7 +61,7 @@
         <ext>tiff</ext>
         <ext>tif</ext>
       </image>
-      <text name="title" label="title"/>
+      <text name="header" label="title"/>
       <text name="description" label="desription"/>
     </elements>
   </objectType>
@@ -113,7 +113,7 @@
         <ext>PDF</ext>
       </file>
       <list name="links" label="links">
-        <addableObject objectTypeName="artistName" addText="Add an Artist"/>
+        <addableObject objectTypeName="artistLink" addText="Add a Link"/>
       </list>
     </elements>
     <components>
