@@ -14,7 +14,7 @@ RewriteEngine On
 
 RewriteRule ^application/media/* - [PT,L]
 
-RewriteRule ^(crossdomain.xml|index.php|robots.txt|favicon.ico) - [PT,L]
+RewriteRule ^(crossdomain.xml|index.php|robots.txt|favicon.ico|static) - [PT,L]
 
 
 # Allow css and js to be displayed directly
