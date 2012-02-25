@@ -9,5 +9,16 @@
 	<view name="whatever">
 		<includeData from="single-ipe" label="something"/>
 	</view>
+
+  <view name="artists">
+    <includeData from="represented-artists" label="representedArtists"/>
+    <includeData from="works-available-artists" label="worksAvailableArtists"/>
+  </view>
+
+  <view name="artist">
+    <includeData from="works" label="works"/>
+    <includeData from="cvListing" label="cvListing"/>
+  </view>
+
 </configuration>
 
