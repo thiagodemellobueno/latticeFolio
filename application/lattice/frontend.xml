@@ -16,8 +16,14 @@
   </view>
 
   <view name="artist">
-    <includeData from="works" label="works"/>
+    <includeData from="parent" label="works" objectTypeFilter="works">
+      <includeData from="parent" label="work" objectTypeFilter="work"/>
+    </includeData>
     <includeData from="cvListing" label="cvListing"/>
+  </view>
+
+  <view name="exhibitions">
+    <includeData from="parent" label="exhibition" objectTypeFilter="exhibition"/>
   </view>
 
 </configuration>

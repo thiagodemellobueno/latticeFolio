@@ -4,21 +4,22 @@
 
 </div>
 
+<?foreach($content['works'] as $worksItem):?>
     <div id="gallery" class="slideshow clearFix">
       <div class="slideshowPrev"><a href="#" style="opacity: 0.75; ">Prev</a></div>
       <div class="slideshowNext"><a href="#" style="opacity: 0.75; ">Next</a></div>
       <div class="pane">
         <div class="images" style="width: 6622px;">
-          <?foreach($content['works'] as $worksItem):?>
-            <?if(is_object($worksItem['image'])):?>
-                  <img class="galleryImage" src="<?=latticeurl::site($worksItem['image']->original->fullpath);?>" width="<?=$worksItem['image']->original->width;?>" height="<?=$worksItem['image']->original->height;?>" alt="<?=$worksItem['image']->original->filename;?>" />
+          <?foreach($worksItem['work'] as $workItem):?>
+            <?if(is_object($workItem['image'])):?>
+                  <img class="galleryImage" src="<?=latticeurl::site($workItem['image']->original->fullpath);?>" width="<?=$workItem['image']->original->width;?>" height="<?=$workItem['image']->original->height;?>" alt="<?=$workItem['image']->original->filename;?>" />
             <?endif;?>
-            <h2><?=$worksItem['title'];?></h2>
+<!--            <h2><?=$workItem['title'];?></h2>
 
-            <p class="media"> <?=$worksItem['media'];?></p>
+            <p class="media"> <?=$workItem['media'];?></p>
 
-             <p class="dimensions"> <?=$worksItem['dimensions'];?></p>
-
+             <p class="dimensions"> <?=$workItem['dimensions'];?></p>
+-->
 
           <?endforeach;?>
 
@@ -26,6 +27,7 @@
         </div>
       </div>
     </div>
+<?endforeach;?>
 
 
 

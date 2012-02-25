@@ -107,7 +107,9 @@ td { vertical-align: top; }
   font-style: normal;
   font-weight: 300;}
 
-
+.thumb{
+  padding:0px 0px 33px 0;
+}
 
 
 footer { position:fixed; bottom:0; background:#fff;}
