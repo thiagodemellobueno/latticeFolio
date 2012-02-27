@@ -9,9 +9,9 @@
 <script type="text/javascript" src="http://use.typekit.com/llo3ajs.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-  <script src="js/libs/modernizr-2.5.3.min.js"></script>
-  <script src="js/mootools.js"></script>
-  <script src="js/script.js"></script>
+  <script src="application/views/js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="application/views/js/mootools.js"></script>
+  <script src="application/views/js/script.js"></script>
 
    <link rel="stylesheet" href="application/views/css/style.css">
   <link rel="stylesheet" href="application/views/css/text.css">
