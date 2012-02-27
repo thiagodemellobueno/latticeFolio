@@ -42,7 +42,24 @@
       <text name="blurb" label="blurb"/>
     </elements>
     <addableObject objectTypeName="exhibition" addText="Add an Exhibition"/>
+    <component objectTypeName="archivedExhibition" label="Older Exhibitions"/>
   </objectType>
+
+  <objectType name="archivedExhibition" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+    <elements>
+      <date name="date" label="Date"/>
+      <text name="blurb" label="Blurb"/>
+      <text name="bodyCopy" label="Body Copy"/>
+      <image name="image" label="Image">
+        <ext>jpg</ext>
+        <ext>tiff</ext>
+        <ext>tif</ext>
+      </image>
+      <text name="imageDescription" label="Image Description"/>
+      <link name="link" label="Link"/>
+    </elements>
+  </objectType>
+
 
   <objectType name="exhibition" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
     <elements>
