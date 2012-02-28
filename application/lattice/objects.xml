@@ -12,7 +12,7 @@
       <text name="header" label="Title"/>
       <text name="subtitle" label="Subtitle"/>
       <text name="blurb" label="Blurb"/>
-      <link name="link" label="Link"/>
+      <text name="link" label="Link"/>
       <list name="homeGallery" label="Home Image Gallery">
         <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
       </list>
@@ -60,7 +60,8 @@
         <ext>tif</ext>
       </image>
       <text name="imageDescription" label="Image Description"/>
-      <link name="link" label="Link"/>
+      <text name="linkLabel" label="link Label"/>
+      <text name="link" label="Link"/>
     </elements>
   </objectType>
 
@@ -116,6 +117,7 @@
   <objectType name="artistLink" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
     <elements>
       <text name="link" label="Link"/>
+      <text name="linkLabel" label="Link Label"/>
     </elements>
   </objectType>
 
@@ -161,12 +163,14 @@
       <text name="blurb" label="Blurb"/>
       <text name="bodyCopy" label="Body Copy"/>
       <image name="image" label="Image">
+        <resize name="newsImage" width="221" height="147" crop="true" />
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
       </image>
       <text name="imageDescription" label="Image Description"/>
-      <link name="link" label="Link"/>
+      <text name="linkLabel" label="Link Label"/>
+      <text name="link" label="Link"/>
     </elements>
   </objectType>
 
@@ -180,12 +184,14 @@
       <text name="blurb" label="Blurb"/>
       <text name="bodyCopy" label="Body Copy"/>
       <image name="image" label="Image">
+        <resize name="pressImage" width="221" height="147" crop="true" />
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
       </image>
       <text name="imageDescription" label="Image Description"/>
-      <link name="link" label="Link"/>
+      <text name="linkLabel" label="Link Label"/>
+      <text name="link" label="Link"/>
     </elements>
   </objectType>
 

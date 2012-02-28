@@ -94,7 +94,8 @@ td { vertical-align: top; }
 }
 #show ul li img { height:360px;}
 #main{ }
-#main p {margin-left:0;}
+#main p {margin-left:0;
+    padding-bottom:12em;}
 
 #representedArtists a{
       font-style: normal;
@@ -108,11 +109,19 @@ td { vertical-align: top; }
   font-weight: 300;}
 
 .thumb{
-  padding:0px 0px 33px 0;
+  padding:0px 0px 40px 0;
 }
 
-.endspace{
-  height:100px;
+.blurb{
+  margin-bottom:3em;
+}
+
+.theBottom{
+  padding-bottom:12em;
+}
+
+#cvListing{
+  margin-bottom:12em;
 }
 
 footer { position:fixed; bottom:0; background:#fff;}

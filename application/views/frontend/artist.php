@@ -36,14 +36,25 @@
 <div class="grid_6"
 <p class="bio"> <?=$content['main']['bio'];?></p>
 
+<div id="cvListing" class="clearfix" >
+<?foreach($content['cvListing'] as $cvListingItem):?>
+ <?=latticeview::Factory($cvListingItem)->view()->render();?>
+<?endforeach;?>
+</div>
+</div>
+
+
+
+
+<div class="grid_5 push_1">
+
+
 <?if(is_object($content['main']['cv'])):?>
 <a href="<?=$content['main']['cv']->fullpath;?>"><?=$content['main']['cv']->filename;?></a>
 
 <?endif;?>
 
-</div>
 
-<div class="grid_5 push_1">
 <h2>links</h2>
 
 <div id="links" >
@@ -56,15 +67,6 @@
 
 <?endforeach;?>
 
-
-
-<h2>cvListing</h2>
-
-<ul id="cvListing" >
-<?foreach($content['cvListing'] as $cvListingItem):?>
- <?=latticeview::Factory($cvListingItem)->view()->render();?>
-<?endforeach;?>
-</ul>
 </div>
 </div>
-<div class="endspace"></div>
+

@@ -1,4 +1,4 @@
-
+<div class="theBottom">
 <div class="container_12">
 
 <?foreach($content['exhibition'] as $exhibitionItem):?>
@@ -8,13 +8,12 @@
 </div>
 
 <div class="grid_7 push_1">
-   <h2><?=$exhibitionItem['title'];?></h2>
 
-   <p class="dateRange"> <?=$exhibitionItem['dateRange'];?></p>
+  <h3 class="headline"> <?=$exhibitionItem['headline'];?></h3>
 
-   <p class="headline"> <?=$exhibitionItem['headline'];?></p>
+   <h3 class="dateRange"> <?=$exhibitionItem['dateRange'];?></h3>
 
-   <p class="blurb"> <?=$exhibitionItem['blurb'];?></p>
+     <p class="blurb"> <?=$exhibitionItem['blurb'];?></p>
 </div>
 <div class="clear"></div>
 
@@ -23,3 +22,4 @@
 </div>
 
 <div class="clear"></div>
+</div>
