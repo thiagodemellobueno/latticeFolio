@@ -42,10 +42,14 @@
       <text name="blurb" label="blurb"/>
     </elements>
     <addableObject objectTypeName="exhibition" addText="Add an Exhibition"/>
-    <component objectTypeName="archivedExhibition" label="Older Exhibitions"/>
   </objectType>
 
-  <objectType name="archivedExhibition" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="olderExhibitions" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+    <addableObject objectTypeName="archivedExhibition" addText="add an Archived Exhibition"/>
+  </objectType>
+    
+    
+    <objectType name="archivedExhibition" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
     <elements>
       <date name="date" label="Date"/>
       <text name="blurb" label="Blurb"/>

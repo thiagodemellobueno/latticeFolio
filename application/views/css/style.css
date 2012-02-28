@@ -110,6 +110,9 @@ td { vertical-align: top; }
   padding:0px 0px 33px 0;
 }
 
+.endspace{
+  height:100px;
+}
 
 footer { position:fixed; bottom:0; background:#fff;}
 footer ul {margin:0; padding:0; list-style:none;}
@@ -182,7 +185,7 @@ div.slideshowPrev {
     position:absolute;
     left:0; 
     z-index: 10000;
-    background: url(../img/previous_image.png) center center no-repeat;
+    background: url(../../media/previous_image.png) center center no-repeat;
 }
 
 div.slideshowNext {
@@ -191,7 +194,7 @@ div.slideshowNext {
   	z-index: 10000;
   	position:absolute;
     right:0;
-	  background: url(../img/next_image.png) center center no-repeat;
+	  background: url(../../media/next_image.png) center center no-repeat;
 }
 
 div.slideshowPrev a,
