@@ -132,7 +132,20 @@ td { vertical-align: top; }
   margin-bottom:12em;
 }
 
-footer { position:fixed; bottom:0; background:#fff;}
+#exHeadline{
+  font-size:24px;
+    font-style: normal;
+          font-weight: 100;
+        }
+
+.introPara{
+  margin-top:2em;
+  font-size:24px;  
+  font-style: normal;
+      font-weight: 100;}
+
+
+footer { position:fixed; bottom:0; background-image: url("../../media/bg_white80.png");;}
 footer ul {margin:0; padding:0; list-style:none;}
 footer ul li {margin:0; padding:0;}
 

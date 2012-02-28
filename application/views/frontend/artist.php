@@ -36,12 +36,29 @@
 <div class="grid_6"
 <p class="bio"> <?=$content['main']['bio'];?></p>
 
-<div id="cvListing" class="clearfix" >
+<div id="cvListing" >
 <?foreach($content['cvListing'] as $cvListingItem):?>
- <?=latticeview::Factory($cvListingItem)->view()->render();?>
+  <div class="cvListing">
+   <h3><?=$cvListingItem['title'];?></h3>
+
+<div id="cvListItem" >
+<?foreach($cvListingItem['cvListItem'] as $cvListItemItem):?>
+  
+
+   <p class="entry"> <?=$cvListItemItem['entry'];?></p>
+
+  
 <?endforeach;?>
 </div>
+
+
+  </div>
+<?endforeach;?>
 </div>
+
+</div>
+
+
 
 
 

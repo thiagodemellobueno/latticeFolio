@@ -184,10 +184,12 @@
   <objectType name="about" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
     <elements>
       <image name="image" label="Image">
+        <resize name="aboutImage" width="540" height="360" crop="true" />
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
       </image>
+      <text name="introPara" label="Intro Paragraph"/>
       <text name="blurb" label="Blurb"/>
     </elements>
   </objectType>

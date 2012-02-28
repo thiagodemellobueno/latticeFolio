@@ -19,8 +19,10 @@
     <includeData from="parent" label="works" objectTypeFilter="works">
       <includeData from="parent" label="work" objectTypeFilter="work"/>
     </includeData>
-    <includeData from="cvListing" label="cvListing"/>
+    <includeData from="parent" label="cvListing" objectTypeFilter="cvListing"/>
   </view>
+
+
 
   <view name="exhibitions">
     <includeData from="parent" label="exhibition" objectTypeFilter="exhibition"/>
