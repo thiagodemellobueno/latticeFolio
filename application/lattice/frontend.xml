@@ -26,5 +26,14 @@
     <includeData from="parent" label="exhibition" objectTypeFilter="exhibition"/>
   </view>
 
+  <view name="news">
+    <includeData from="parent" label="newsItem" objectTypeFilter="newsItem"/>
+  </view>
+
+  <view name="press">
+    <includeData from="parent" label="pressItem" objectTypeFilter="pressItem"/>
+  </view>
+
+
 </configuration>
 
