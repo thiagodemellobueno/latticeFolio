@@ -24,6 +24,7 @@
 
   <view name="exhibitions">
     <includeData from="parent" label="exhibition" objectTypeFilter="exhibition"/>
+    <includeData from="older-exhibitions" label="olderExhibitions"/>
   </view>
 
   <view name="news">
