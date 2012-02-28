@@ -11,7 +11,7 @@
 
   <h3 class="headline"> <?=$exhibitionItem['headline'];?></h3>
 
-   <h3 class="dateRange"> <?=$exhibitionItem['dateRange'];?></h3>
+  <h3 class="dates"> <?=$exhibitionItem['startDate'];?> - <?=$exhibitionItem['endDate'];?></h3>
 
      <p class="blurb"> <?=$exhibitionItem['blurb'];?></p>
 </div>

@@ -1,6 +1,8 @@
 <h1><?=$content['main']['title'];?></h1>
 
-<p class="dateRange"> <?=$content['main']['dateRange'];?></p>
+<p class="startDate"> <?=$content['main']['startDate'];?></p>
+
+<p class="endDate"> <?=$content['main']['endDate'];?></p>
 
 <p class="headline"> <?=$content['main']['headline'];?></p>
 
