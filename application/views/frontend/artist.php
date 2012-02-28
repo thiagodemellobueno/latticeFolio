@@ -48,22 +48,18 @@
 
 <div class="grid_5 push_1">
 
-
-<?if(is_object($content['main']['cv'])):?>
-<a href="<?=$content['main']['cv']->fullpath;?>"><?=$content['main']['cv']->filename;?></a>
+<h3>Download Bio</h3>
+<?if(is_object($content['main']['bioPDF'])):?>
+<a href="<?=$content['main']['bioPDF']->fullpath;?>"><?=$content['main']['bioPDF']->filename;?></a>
 
 <?endif;?>
 
 
-<h2>links</h2>
-
+<h3>Links and other Media</h3>
 <div id="links" >
 <?foreach($content['main']['links'] as $linksItem):?>
   
-   <h2><?=$linksItem['title'];?></h2>
-
-   <p class="link"> <?=$linksItem['link'];?></p>
-
+  <a href="<?=$linksItem['link'];?>"><?=$linksItem['linkLabel'];?></a>
 
 <?endforeach;?>
 

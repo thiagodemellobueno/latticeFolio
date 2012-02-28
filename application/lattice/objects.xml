@@ -94,7 +94,7 @@
     <elements>
       <text name="name" label="name"/>
       <text name="bio" label="Bio"/>
-      <file name="cv" label="CV">
+      <file name="bioPDF" label="Bio PDF">
         <ext>PDF</ext>
       </file>
       <list name="links" label="links">
