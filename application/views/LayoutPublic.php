@@ -22,7 +22,6 @@
 	<?=$javascript;?>
 </head>
 <body class="">
-<!--	<div id="container" class="container_12"> -->
 <?=Request::Factory('header/public')->execute()->body();?>
 <?=Request::Factory('publicmenu')->execute()->body();?>
 <?=$body;?>

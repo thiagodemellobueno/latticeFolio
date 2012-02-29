@@ -50,7 +50,7 @@
       <date name="date" label="Date"/>
       <text name="blurb" label="Blurb"/>
       <image name="image" label="Image">
-        <resize name="archiveImage" width="221" height="147" crop="true" /> 
+        <resize name="archiveImage" width="221" height="147" forceDimension="width" /> 
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>

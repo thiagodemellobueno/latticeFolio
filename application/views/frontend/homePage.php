@@ -26,13 +26,16 @@
 
 
 <div id="main" class="container_12" role="main">
-<h2 class="title"> <?=$content['main']['header'];?></h2>
 
+<h2 class="title"> <?=$content['main']['header'];?></h2>
 <h3 class="date"> <?=$content['main']['subtitle'];?></h3>
+
+<div class="grid_7">
 
 <p class="blurb"> <?=$content['main']['blurb'];?></p>
 
 <p class="link"> <?=$content['main']['link'];?></p>
+</div>
 
 </div>
 

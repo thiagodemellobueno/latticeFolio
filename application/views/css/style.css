@@ -71,7 +71,7 @@ td { vertical-align: top; }
 
 
 .header { 
-  height:100px; margin-top:80px;}
+  height:100px; margin-top:77px;}
 #masthead a{background-image: url("../images/logoNew.png");display:block; text-indent:-4000px; width:100%; height:100%; }
 
 #navmenu{
@@ -96,14 +96,22 @@ td { vertical-align: top; }
 #main{ }
 #main p {margin-left:0;
     padding-bottom:12em;}
-
+#representedArtists{
+  padding-top:3px;
+}
 #representedArtists a{
       font-style: normal;
-        font-weight: 300;}
+        font-weight: 300;
+      font-size:14px;
+      line-height:24px;
+    }
 
-
-
+#worksAvailArtists{
+  padding-top:1px;
+}
 #worksAvailArtists a{color:#b0b2b5;
+ font-size:14px;
+ line-height:24px;
   clear:both;
   font-style: normal;
   font-weight: 300;}
@@ -159,8 +167,9 @@ footer ul li {margin:0; padding:0;}
 		div.slideshow img.galleryImage{
 			display: block;
 			float: left;
-			margin: 0 1em 1em 1em;
-		}
+			margin: 0 1em 1em 0em;	
+  }
+
 		#main{
 			padding: 2em;
 		}
