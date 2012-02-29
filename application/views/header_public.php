@@ -1,7 +1,7 @@
 <div class="container_12">
 <div class="header">
 <div id="masthead" class="grid_6 alpha">
-<h1><a href="<?=url::base();?>home">J. Cacciola Gallery</a></h1>
+<h2 id="logo"><a href="<?=url::base();?>home">J. Cacciola Gallery</a></h2>
 
       </div>
 
