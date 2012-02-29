@@ -72,7 +72,7 @@ td { vertical-align: top; }
 
 .header { 
   height:100px; margin-top:80px;}
-#masthead a{background-image: url("../../media/logoNew.png");display:block; text-indent:-4000px; width:100%; height:100%; }
+#masthead a{background-image: url("../images/logoNew.png");display:block; text-indent:-4000px; width:100%; height:100%; }
 
 #navmenu{
  margin-top:30px;
@@ -145,7 +145,7 @@ td { vertical-align: top; }
       font-weight: 100;}
 
 
-footer { position:fixed; bottom:0; background-image: url("../../media/bg_white80.png");;}
+footer { position:fixed; bottom:0; background-image: url("../images/bg_white80.png");;}
 footer ul {margin:0; padding:0; list-style:none;}
 footer ul li {margin:0; padding:0;}
 
@@ -216,7 +216,7 @@ div.slideshowPrev {
     position:absolute;
     left:0; 
     z-index: 10000;
-    background: url(../../media/previous_image.png) center center no-repeat;
+    background: url(../images/previous_image.png) center center no-repeat;
 }
 
 div.slideshowNext {
@@ -225,7 +225,7 @@ div.slideshowNext {
   	z-index: 10000;
   	position:absolute;
     right:0;
-	  background: url(../../media/next_image.png) center center no-repeat;
+	  background: url(../images/next_image.png) center center no-repeat;
 }
 
 div.slideshowPrev a,
