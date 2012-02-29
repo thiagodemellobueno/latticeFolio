@@ -7,7 +7,7 @@
   <img class="thumb" width="221px" height="147"></img>
 </div>
 
-<div class="grid_7 push_1">
+<div class="grid_7">
 
   <h3 class="headline"> <?=$exhibitionItem['headline'];?></h3>
 
@@ -35,7 +35,7 @@
           <?endif;?>
 </div>
 
-<div class="grid_7 push_1">
+<div class="grid_7">
     <h3><?=$olderExhibitionsItem['title'];?></h3>
 
    <h3 class="date"> <?=$olderExhibitionsItem['date'];?></h3>
