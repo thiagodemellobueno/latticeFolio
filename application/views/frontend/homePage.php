@@ -10,11 +10,6 @@
 
             <?endif;?>
 
-    <!---        <p class="header"> <?=$homeGalleryItem['header'];?></p>
-
-   <p class="description"> <?=$homeGalleryItem['description'];?></p> --->
-
-
             <?endforeach;?>
 
             

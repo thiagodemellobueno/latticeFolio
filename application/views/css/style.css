@@ -78,6 +78,7 @@ td { vertical-align: top; }
 #navmenu{
  margin-top:30px;
   margin-left:20px;
+  z-index:6;
 }
 .nav a{ 
   margin-right:30px; 
@@ -87,7 +88,20 @@ td { vertical-align: top; }
   padding-bottom:10px;
 }
 .nav a:hover {border-bottom:1px solid black;}
-.nav a:active {border-bottom:1px solid black;}
+.nav a.active {border-bottom:1px solid black;}
+.artistHover{
+  padding-left:20px;
+  position:fixed;
+  width:318px;
+  margin-top:60px;
+  background-color:white;
+  z-index:5;
+}
+
+.hooverItem{
+  width:135px;
+  float:left;
+}
 
 .nav ul {list-style:none;}
 .nav ul li { display:inline;}
@@ -129,6 +143,14 @@ td { vertical-align: top; }
   clear:both;
   font-style: normal;
   font-weight: 300;}
+
+  #worksAvailArtists2 a{color:#b0b2b5;
+    font-size:14px;
+      line-height:24px;
+        clear:both;
+          font-style: normal;
+            font-weight: 300;}
+
 
 .thumb{
   padding:0px 0px 40px 0;
@@ -214,7 +236,8 @@ footer ul li {margin:0; padding:0;}
 	div.slideshow .galleryImage{
 	    display: inline-block;
 	    margin: 0 0 0 .5em;
-	}
+	  
+  }
 }
 
 @media only screen  {
