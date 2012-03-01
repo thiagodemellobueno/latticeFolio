@@ -14,8 +14,9 @@
      <?foreach($worksItem['work'] as $workItem):?>
         <div class="galleryImage">   
          <?if(is_object($workItem['image'])):?>
+        <a href="<?=url::base('http').$workItem['slug'];?>">
                   <img class="" src="<?=latticeurl::site($workItem['image']->original->fullpath);?>" width="<?=$workItem['image']->original->width;?>" height="<?=$workItem['image']->original->height;?>" alt="<?=$workItem['image']->original->filename;?>" />
-
+</a>
 <?endif;?>
 <div class="workMetaData">
   <p class="workTitle"><?=$workItem['title'];?></p>

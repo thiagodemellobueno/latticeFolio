@@ -6,13 +6,19 @@
       </div>
 
 
-<div id="navmenu" class="grid_5 push_1">
+<div id="navmenu" class="grid_6 push_1">
 <div class="nav">
-<a href="<?=url::base();?>artists"  class="<?echo latticeview::withinSubtree('artists') ? "active" : "";?>" >Artists</a>
-<a href="<?=url::base();?>news"  class="<?echo latticeview::withinSubtree('news') ? "active" : "";?>" >News</a>
-<a href="<?=url::base();?>press"  class="<?echo latticeview::withinSubtree('press') ? "active" : "";?>" >Press</a>
-<a href="<?=url::base();?>exhibitions"  class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>" >Exhibitions</a>
-<a href="<?=url::base();?>about"  class="<?echo latticeview::withinSubtree('about') ? "active" : "";?>" >Press</a>
+<ul>
+<li><a href="<?=url::base();?>artists"  class="<?echo latticeview::withinSubtree('artists') ? "active" : "";?>" >Artists</a></li>
+  <ul>
+    <li><a href="#"> test</a></li>
+  </ul>
+<li><a href="<?=url::base();?>news"  class="<?echo latticeview::withinSubtree('news') ? "active" : "";?>" >News</a></li>
+<li><a href="<?=url::base();?>press"  class="<?echo latticeview::withinSubtree('press') ? "active" : "";?>" >Press</a></li>
+<li><a href="<?=url::base();?>exhibitions"  class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>" >Exhibitions</a></li>
+<li><a href="<?=url::base();?>about"  class="<?echo latticeview::withinSubtree('about') ? "active" : "";?>" >Press</a></li>
+
+</ul>
 
 
 </div>

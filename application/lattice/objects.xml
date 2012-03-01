@@ -140,6 +140,7 @@
       <checkbox name="shareLinks" label="Display Share Links"/>
       <image name="image" label="Image">
         <resize name="workImage" width="619" height="400" forceDimension="height" />
+        <resize name="workImageBig" width="780" height="520" forceDimension="width" />
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
