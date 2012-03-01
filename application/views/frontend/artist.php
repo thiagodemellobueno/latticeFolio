@@ -1,6 +1,6 @@
 <div class="container_12">
 
-<h2><?=$content['main']['title'];?></h2>
+<p id="exHeadline"><?=$content['main']['title'];?></p>
 
 </div>
 
@@ -9,26 +9,28 @@
       <div class="slideshowPrev"><a href="#" style="opacity: 0.75; ">Prev</a></div>
       <div class="slideshowNext"><a href="#" style="opacity: 0.75; ">Next</a></div>
       <div class="pane">
-        <div class="images" style="width: 6622px; height: 700px;">
-          <?foreach($worksItem['work'] as $workItem):?>
-<div class="">
-            <?if(is_object($workItem['image'])):?>
-                  <img class="galleryImage" src="<?=latticeurl::site($workItem['image']->original->fullpath);?>" width="<?=$workItem['image']->original->width;?>" height="<?=$workItem['image']->original->height;?>" alt="<?=$workItem['image']->original->filename;?>" />
-      
+        <div class="images" style="width: 6622px;">
+
+     <?foreach($worksItem['work'] as $workItem):?>
+        <div class="galleryImage">   
+         <?if(is_object($workItem['image'])):?>
+                  <img class="" src="<?=latticeurl::site($workItem['image']->original->fullpath);?>" width="<?=$workItem['image']->original->width;?>" height="<?=$workItem['image']->original->height;?>" alt="<?=$workItem['image']->original->filename;?>" />
+
 <?endif;?>
+<div class="workMetaData">
+  <p class="workTitle"><?=$workItem['title'];?></p>
+<div class="mediaInfo">
+  <p class="mediaUsed"> <?=$workItem['media'];?><br/>
+  <?=$workItem['dimensions'];?></p>
+</div>
 
-<div class="grid_7 mediaText">
-  <p><?=$workItem['title'];?></p>
-   <p class="media"> <?=$workItem['media'];?></p>
-
-             <p class="dimensions"> <?=$workItem['dimensions'];?></p>
 </div>
 
 </div>
           <?endforeach;?>
 
-       
-        </div>      
+
+       </div>      
       </div>
     </div>
 <?endforeach;?>
