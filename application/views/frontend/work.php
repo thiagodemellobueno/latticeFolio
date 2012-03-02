@@ -1,7 +1,7 @@
 <div class="theBottom">
 <div class="container_12">
 <div class="workHeader">
-<p id="exHeadline" style="float:left;">Artist Name -<?=$content['main']['title'];?></p>
+<p id="exHeadline" style="float:left;"><?=$content['main']['slug'];?>-<?=$content['main']['title'];?></p>
 </div>
 
 <div class="shareLinks">

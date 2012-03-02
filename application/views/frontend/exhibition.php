@@ -34,9 +34,10 @@
 </div>
 
 <div class="grid_5 push_1">
+<div class="linksHeader">
 <?if(is_object($content['main']['PDF'])):?>
-<a href="<?=$content['main']['PDF']->fullpath;?>"><?=$content['main']['PDF']->filename;?></a>
-
+<a href="<?=$content['main']['PDF']->fullpath;?>"><?=$content['main']['PDF']->filename;?><h3 style="float:left;"> Press Release</h3><img style="float:right;" id="pdf" src="<?=url::base();?>application/views/images/icon_pdf.gif"/></a>
+</div>
 <?endif;?>
 </div>
 </div>
