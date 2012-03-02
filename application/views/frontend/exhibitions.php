@@ -33,12 +33,14 @@
      <p class="blurb"> <?=$exhibitionItem['blurb'];?></p>
 </div>
 <div class="clear"></div>
+<div class="clearfix"></div>
 
 
 <?endforeach;?>
 </a>
 </div>
 </div>
+
 
 <div class="theBottom container_12">
 <h2>Older Exhibitions</h2>
@@ -61,6 +63,8 @@
 
   </div>
 <?endforeach;?>
+<div class="clearFix"></div>
+
 </div>
 
 

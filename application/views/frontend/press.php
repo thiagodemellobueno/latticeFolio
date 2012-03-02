@@ -19,6 +19,7 @@
    <p class="blurb"> <?=$pressItemItem['blurb'];?></p>
 
   </div>
+<div class="clearfix"></div>
 <?endforeach;?>
 </div>
 
