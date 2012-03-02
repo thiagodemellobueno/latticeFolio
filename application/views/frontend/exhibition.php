@@ -10,15 +10,21 @@
       <div class="pane">
         <div class="images" style="width: 6622px;">
 <?foreach($content['main']['exhibitionGallery'] as $exhibitionGalleryItem):?>
-            <?if(is_object($exhibitionGalleryItem['image'])):?>
-                  <img id="image" class="galleryImage" src="<?=latticeurl::site($exhibitionGalleryItem['image']->original->fullpath);?>" width="<?=$exhibitionGalleryItem['image']->original->width;?>" height="<?=$exhibitionGalleryItem['image']->original->height;?>" alt="<?=$exhibitionGalleryItem['image']->original->filename;?>" />
+          <div class="galleryImage">  
+          <?if(is_object($exhibitionGalleryItem['image'])):?>
+                  <img id="image"  src="<?=latticeurl::site($exhibitionGalleryItem['image']->original->fullpath);?>" width="<?=$exhibitionGalleryItem['image']->original->width;?>" height="<?=$exhibitionGalleryItem['image']->original->height;?>" alt="<?=$exhibitionGalleryItem['image']->original->filename;?>" />
             <?endif;?>
 
+<div class="workMetaData">
+  <p class="workTitle"><?=$exhibitionGalleryItem['header'];?></p>
+<div class="mediaInfo">
+  <p class="mediaUsed"> <?=$exhibitionGalleryItem['description'];?>
+</div>
 
-<!--         <p class="media"> <?=$exhibitionGalleryItem['header'];?></p>
+</div>
 
-             <p class="description"> <?=$exhibitionGalleryItem['description'];?></p>
--->
+</div>
+
 
           <?endforeach;?>
 </div>
