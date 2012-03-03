@@ -5,25 +5,23 @@
 
   <objectTypes>
 
- 
-
     <objectType name="homePage" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
      <elements>
       <text name="header" label="Title"/>
       <text name="subtitle" label="Subtitle"/>
       <text name="blurb" label="Blurb"/>
       <text name="link" label="Link"/>
-      <list name="homeGallery" label="Home Image Gallery">
+      <list name="homeGallery" label="Home Image Gallery" allowChildSort="true">
         <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
       </list>
     </elements>
   </objectType>
 
-  <objectType name="imageGallery" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
+  <objectType name="imageGallery" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
   </objectType>
 
-  <objectType name="galleryImage" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
+  <objectType name="galleryImage" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
       <image name="image" label="Image">
         <resize name="test" width="540" height="359" forceDimension="height" />
@@ -36,16 +34,16 @@
     </elements>
   </objectType>
 
-  <objectType name="exhibitions" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="exhibitions" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <addableObject objectTypeName="exhibition" addText="Add an Exhibition"/>
   </objectType>
 
-  <objectType name="olderExhibitions" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="olderExhibitions" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <addableObject objectTypeName="archivedExhibition" addText="add an Archived Exhibition"/>
   </objectType>
     
     
-    <objectType name="archivedExhibition" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
+    <objectType name="archivedExhibition" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
       <date name="date" label="Date"/>
       <text name="blurb" label="Blurb"/>
@@ -59,7 +57,7 @@
   </objectType>
 
 
-  <objectType name="exhibition" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="exhibition" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <elements>
       <date name="startDate" label="StartDate"/>
       <date name="endDate" label="End Date"/>
@@ -69,13 +67,13 @@
       <file name="PDF" label="PDF">
         <ext>PDF</ext>
       </file>
-      <list name="exhibitionGallery" label="Exhibition Gallery">
+      <list name="exhibitionGallery" label="Exhibition Gallery" allowChildSort="true">
         <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
       </list>
     </elements>
   </objectType>
 
-  <objectType name="artists" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="artists" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <components>
       <component objectTypeName="representedArtists" label="Represented Artists"/>
       <component objectTypeName="worksAvailableArtists" label="Works Available Artists"/>
@@ -90,14 +88,14 @@
     <addableObject objectTypeName="artist" addText="Add an Artist"/>
   </objectType>
 
-  <objectType name="artist" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="true">
+  <objectType name="artist" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
       <text name="name" label="name"/>
       <text name="bio" label="Bio"/>
       <file name="bioPDF" label="Bio PDF">
         <ext>PDF</ext>
       </file>
-      <list name="links" label="links">
+      <list name="links" label="links" allowChildSort="true">
         <addableObject objectTypeName="artistLink" addText="Add a Link"/>
       </list>
     </elements>
@@ -108,32 +106,32 @@
   
   </objectType>
 
-  <objectType name="artistLink" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
+  <objectType name="artistLink" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
       <text name="link" label="Link"/>
       <text name="linkLabel" label="Link Label"/>
     </elements>
   </objectType>
 
-  <objectType name="cvListing" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
+  <objectType name="cvListing" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
-      <list name="cvListItem" label="CV List Item">
+      <list name="cvListItem" label="CV List Item" allowChildSort="true">
         <addableObject objectTypeName="cvItem" addText="Add a CV Item"/>
       </list>
     </elements>
   </objectType>
 
-  <objectType name="cvItem" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
+  <objectType name="cvItem" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
       <text name="entry" label="entry"/>
     </elements>
   </objectType>
 
-  <objectType name="works" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="works" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <addableObject objectTypeName="work" addText="Work"/>
   </objectType>
 
-  <objectType name="work" contentType="document" allowChildSort="false" allowDelete="true" allowTogglePublish="false">
+  <objectType name="work" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
       <text name="media" label="Media"/>
       <text name="dimensions" label="Dimensions"/>
@@ -147,11 +145,11 @@
     </elements>
   </objectType>
 
-  <objectType name="news" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="news" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <addableObject objectTypeName="newsItem" addText="Add Some News"/>
   </objectType>
 
-  <objectType name="newsItem" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="newsItem" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <elements>
       <date name="date" label="Date"/>
       <text name="blurb" label="Blurb"/>
@@ -164,11 +162,11 @@
     </elements>
   </objectType>
 
-  <objectType name="press" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="press" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <addableObject objectTypeName="pressItem" addText="Add Some Press"/>
   </objectType>
 
-  <objectType name="pressItem" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="pressItem" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <elements>
       <date name="date" label="Date"/>
       <text name="blurb" label="Blurb"/>
@@ -181,7 +179,7 @@
     </elements>
   </objectType>
 
-  <objectType name="about" contentType="document" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
+  <objectType name="about" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <elements>
       <image name="image" label="Image">
         <resize name="aboutImage" width="540" height="360" crop="true" />
