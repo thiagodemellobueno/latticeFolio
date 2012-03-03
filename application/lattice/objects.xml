@@ -5,8 +5,6 @@
 
   <objectTypes>
 
- 
-
     <objectType name="homePage" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
      <elements>
       <text name="header" label="Title"/>
