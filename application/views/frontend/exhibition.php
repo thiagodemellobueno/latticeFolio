@@ -10,15 +10,21 @@
       <div class="pane">
         <div class="images" style="width: 6622px;">
 <?foreach($content['main']['exhibitionGallery'] as $exhibitionGalleryItem):?>
-            <?if(is_object($exhibitionGalleryItem['image'])):?>
-                  <img id="image" class="galleryImage" src="<?=latticeurl::site($exhibitionGalleryItem['image']->original->fullpath);?>" width="<?=$exhibitionGalleryItem['image']->original->width;?>" height="<?=$exhibitionGalleryItem['image']->original->height;?>" alt="<?=$exhibitionGalleryItem['image']->original->filename;?>" />
+          <div class="galleryImage">  
+          <?if(is_object($exhibitionGalleryItem['image'])):?>
+                  <img id="image"  src="<?=latticeurl::site($exhibitionGalleryItem['image']->original->fullpath);?>" width="<?=$exhibitionGalleryItem['image']->original->width;?>" height="<?=$exhibitionGalleryItem['image']->original->height;?>" alt="<?=$exhibitionGalleryItem['image']->original->filename;?>" />
             <?endif;?>
 
+<div class="workMetaData">
+  <p class="workTitle"><?=$exhibitionGalleryItem['header'];?></p>
+<div class="mediaInfo">
+  <p class="mediaUsed"> <?=$exhibitionGalleryItem['description'];?>
+</div>
 
-<!--         <p class="media"> <?=$exhibitionGalleryItem['header'];?></p>
+</div>
 
-             <p class="description"> <?=$exhibitionGalleryItem['description'];?></p>
--->
+</div>
+
 
           <?endforeach;?>
 </div>
@@ -34,9 +40,10 @@
 </div>
 
 <div class="grid_5 push_1">
+<div class="linksHeader">
 <?if(is_object($content['main']['PDF'])):?>
-<a href="<?=$content['main']['PDF']->fullpath;?>"><?=$content['main']['PDF']->filename;?></a>
-
+<a href="<?=$content['main']['PDF']->fullpath;?>"><?=$content['main']['PDF']->filename;?><h3 style="float:left;"> Press Release</h3><img style="float:right;" id="pdf" src="<?=url::base();?>application/views/images/icon_pdf.gif"/></a>
+</div>
 <?endif;?>
 </div>
 </div>

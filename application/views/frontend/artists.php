@@ -7,15 +7,11 @@
 
 <?foreach($content['representedArtists'] as $representedArtistsItem):?>
    <a href="<?=url::base('http').$representedArtistsItem['slug'];?>"><?=$representedArtistsItem['title'];?></a><br/>
-
-  
 <?endforeach;?>
 
 </div>
 
 <div id="worksAvailArtists" class="grid_5 push_5">
-<h3>Works Available</h3>
-
 <?foreach($content['worksAvailableArtists'] as $worksAvailableArtistsItem):?>
   <a href="<?=url::base('http').$worksAvailableArtistsItem['slug'];?>"><?=$worksAvailableArtistsItem['title'];?></a>
 

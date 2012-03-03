@@ -4,10 +4,27 @@
 <?foreach($content['exhibition'] as $exhibitionItem):?>
 <a href="<?=url::base('http').$exhibitionItem['slug'];?>">
 <div class="grid_4">
+
+<ul id="exhibitionGallery" >
+<?foreach($exhibitionItem['exhibitionGallery'] as $exhibitionGalleryItem):?>
+  <li class="galleryImage">
+   
+    <?if(is_object($exhibitionGalleryItem['image'])):?>
+    <img id="image" src="<?=latticeurl::site($exhibitionGalleryItem['image']->original->fullpath);?>" width="<?=$exhibitionGalleryItem['image']->original->width;?>" height="<?=$exhibitionGalleryItem['image']->original->height;?>" alt="<?=$exhibitionGalleryItem['image']->original->filename;?>" />
+   <?endif;?>
+
+  </li>
+<?endforeach;?>
+</ul>
+
+
+
+
+
   <img class="thumb" width="221px" height="147"></img>
 </div>
 
-<div class="grid_7 push_1">
+<div class="grid_7">
 
   <h3 class="headline"> <?=$exhibitionItem['headline'];?></h3>
 
@@ -16,12 +33,14 @@
      <p class="blurb"> <?=$exhibitionItem['blurb'];?></p>
 </div>
 <div class="clear"></div>
+<div class="clearfix"></div>
 
 
 <?endforeach;?>
 </a>
 </div>
 </div>
+
 
 <div class="theBottom container_12">
 <h2>Older Exhibitions</h2>
@@ -35,7 +54,7 @@
           <?endif;?>
 </div>
 
-<div class="grid_7 push_1">
+<div class="grid_7">
     <h3><?=$olderExhibitionsItem['title'];?></h3>
 
    <h3 class="date"> <?=$olderExhibitionsItem['date'];?></h3>
@@ -44,6 +63,8 @@
 
   </div>
 <?endforeach;?>
+<div class="clearFix"></div>
+
 </div>
 
 

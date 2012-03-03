@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta http-equiv="content-script-type" content="text/javascript">
-  <title>LatticeCMS &ldquo;It's Made of People!&rdquo;</title>
+  <title>J. Cacciola Gallery</title>
 <!-- typkit -->
 <script type="text/javascript" src="http://use.typekit.com/llo3ajs.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -22,9 +22,8 @@
 	<?=$javascript;?>
 </head>
 <body class="">
-<!--	<div id="container" class="container_12"> -->
 <?=Request::Factory('header/public')->execute()->body();?>
-<?=Request::Factory('publicmenu')->execute()->body();?>
+
 <?=$body;?>
 <?=Request::Factory('footer/public')->execute()->body();?>
 	</div>

@@ -10,7 +10,7 @@
 </div>
 
 
-  <div class="grid_7 push_1">
+  <div class="grid_7">
    <h3><?=$newsItemItem['title'];?></h3>
 
    <h3 class="date"> <?=$newsItemItem['date'];?></h3>
@@ -19,6 +19,7 @@
   </div>
 
 </div>
+<div class="clearfix"></div>
 <?endforeach;?>
 
 </div>

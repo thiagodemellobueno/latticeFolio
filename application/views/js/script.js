@@ -52,7 +52,7 @@ jcacciola.Gallery = new Class({
 		this.element = anElement;
 		this.imageContainer = anElement.getElement( ".images" );
 		this.pane = anElement.getElement('.pane');
-		this.images = this.imageContainer.getElements( "img.galleryImage" );
+		this.images = this.imageContainer.getElements( ".galleryImage" );
 		this.prevLink = this.element.getElement( ".slideshowPrev" );
 		this.nextLink = this.element.getElement( ".slideshowNext" );
 		if( this.images.length < 2 ){

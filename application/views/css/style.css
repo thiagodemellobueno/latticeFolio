@@ -39,7 +39,7 @@ sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: b
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
-ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+ul, ol { margin: 1em 0; padding: 0 0 0 1em; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -80,44 +80,122 @@ td { vertical-align: top; }
 	height:100%;
 }
 
+<<<<<<< HEAD
 /*.header { 
   height:100px; margin-top:80px;}
 #masthead a{background-image: url("../../media/logoNew.png");display:block; text-indent:-4000px; width:100%; height:100%; }
 */
+=======
+.header { 
+  height:100px; margin-top:77px;}
+#masthead a{background-image: url("../images/logoNew.png");display:block; text-indent:-4000px; width:100%; height:100%; }
+#logo{height:60px; padding-bottom:19px;}
+>>>>>>> 2379c1e2a650da797cb2ba2804b0533246eff89b
 
 #navmenu{
- margin-top:30px;
-  margin-left:20px;
+ margin-top:15px;
 }
 
 .nav a{ 
   margin-right:30px; 
   font-style: normal;
   font-weight: 700;
+  text-decoration:none;
+  padding-bottom:10px;
+  font-size:14px;
 }
+
+
+.nav a:hover {border-bottom:1px solid black;}
+
 .nav ul {list-style:none;}
-.nav ul li { display:inline;}
-#show { height:360px; overflow:hidden; margin-top:0; margin-bottom:20px;}
-#show ul {list-style:none; margin-top:0; margin-left:0; padding-left:0;}
-#show ul li {display:inline; height:360px; width:auto; margin:0 5px 0 10px;}
-#show ul li:first-child {
+.nav ul li { display:inline; position:relative; margin-left:0px;}
+
+.nav ul.show{ border: 1px #f00 solid; display: none; position: absolute; top: 1.15em; left: 0 }
+
+.nav ul.show li,
+.nav li:hover .show{ display: block; }
+
+
+.worksAvailDrop{
+  width:160px;
+  float:right;
+}
+.worksAvailDrop a{
+  color:#b0b2b5;
+  border:none;
+  font-size:14px;
+  line-height:24px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.representedDrop{
+   width:160px;
+   float:left;
+ }
+
+ .representedDrop a{
+   border:none;
+   font-size:14px;
+   line-height:24px;
+   font-style: normal;
+   font-weight: 300;
+           }
+
+
+
+.show { background-color:white; width:320px; overflow:hidden;z-index:7;}
+.show ul {list-style:none; margin-top:0; margin-left:0; padding-left:0;}
+.show li ul {position:absolute; display:none; }
+.show ul li:first-child {
   margin-left:0;
 }
-#show ul li img { height:360px;}
+.show ul li a { display:block}
+
+.show li:hover ul { display: block; }
+
+
+
 #main{ }
 #main p {margin-left:0;
     padding-bottom:12em;}
-
+.homeTitle{
+  line-height:24px;
+  margin:3px 0 0 0;
+}
+.homeDate{
+  margin-top:4px;
+  line-height:24px;
+}
+#home{width:540px;}
+#representedArtists{
+  padding-top:3px;
+}
 #representedArtists a{
       font-style: normal;
-        font-weight: 300;}
+        font-weight: 300;
+      font-size:14px;
+      line-height:24px;
+    }
 
-
-
+#worksAvailArtists{
+  padding-top:37px;
+}
 #worksAvailArtists a{color:#b0b2b5;
+ font-size:14px;
+ line-height:24px;
   clear:both;
   font-style: normal;
   font-weight: 300;}
+
+  #worksAvailArtists2 a{color:#b0b2b5;
+    font-size:14px;
+      line-height:24px;
+        clear:both;
+          font-style: normal;
+            font-weight: 300;}
+
 
 .thumb{
   padding:0px 0px 40px 0;
@@ -143,6 +221,22 @@ td { vertical-align: top; }
   margin-bottom:12em;
 }
 
+.workHeader{width:560px;
+  float:left;
+}
+
+.shareLinks{
+  padding-top:7px;
+  padding-left:7px;
+  width:45px;
+  float:left;
+  
+}
+
+.linksHeader{
+  width:131px;
+  height:50px;
+}
 #exHeadline{
   font-size:24px;
     font-style: normal;
@@ -156,7 +250,7 @@ td { vertical-align: top; }
       font-weight: 100;}
 
 
-footer { position:fixed; bottom:0; background-image: url("../../media/bg_white80.png");;}
+footer { position:fixed; bottom:0; padding-top:1em; background-image: url("../images/bg_white80.png");;}
 footer ul {margin:0; padding:0; list-style:none;}
 footer ul li {margin:0; padding:0;}
 
@@ -167,11 +261,12 @@ footer ul li {margin:0; padding:0;}
 			width: 100%;
 			overflow: auto;
 		}
-		div.slideshow img.galleryImage{
+		div.slideshow .galleryImage{
 			display: block;
 			float: left;
-			margin: 0 1em 1em 1em;
-		}
+			margin: 0 1em 1em 0em;	
+  }
+
 		#main{
 			padding: 2em;
 		}
@@ -185,7 +280,7 @@ footer ul li {margin:0; padding:0;}
   /* Style adjustments for viewports that meet the condition */
 	div.slideshow{
 	    position:relative;
-	    margin: 0 0 5em 0 !important;
+	    margin: 0 0 2em 0 !important;
 	}
 
 	div.slideshow .pane{
@@ -199,10 +294,11 @@ footer ul li {margin:0; padding:0;}
 			padding: 0 12em 0 1em;
 	}
 
-	div.slideshow img.galleryImage{
+	div.slideshow .galleryImage{
 	    display: inline-block;
 	    margin: 0 0 0 .5em;
-	}
+	  
+  }
 }
 
 @media only screen  {
@@ -217,7 +313,13 @@ footer ul li {margin:0; padding:0;}
 /* -- slideshow ------------------------------------------- */
 
 
-div.slideshow img.galleryImage:first-child{
+.workMetaData{width:100%;font-size:12px; margin-top:7px; line-height:24px;}
+.workTitle{float:left; width:200px;}
+
+.mediaInfo{color: #B0B2B5;
+}
+
+div.slideshow .galleryImage:first-child{
     margin: 0 0 0 0;
 }
 
@@ -227,7 +329,7 @@ div.slideshowPrev {
     position:absolute;
     left:0; 
     z-index: 10000;
-    background: url(../../media/previous_image.png) center center no-repeat;
+    background: url(../images/previous_image.png) center center no-repeat;
 }
 
 div.slideshowNext {
@@ -236,7 +338,7 @@ div.slideshowNext {
   	z-index: 10000;
   	position:absolute;
     right:0;
-	  background: url(../../media/next_image.png) center center no-repeat;
+	  background: url(../images/next_image.png) center center no-repeat;
 }
 
 div.slideshowPrev a,
