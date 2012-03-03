@@ -94,8 +94,11 @@ td { vertical-align: top; }
 .nav ul {list-style:none;}
 .nav ul li { display:inline; position:relative; margin-left:0px;}
 
-.nav ul.show{ display: none; position: absolute; top: 1.15em; left: 0 }
+.nav ul.show{ border: 1px #f00 solid; display: none; position: absolute; top: 1.15em; left: 0 }
+
+.nav ul.show li,
 .nav li:hover .show{ display: block; }
+
 
 .worksAvailDrop{
   width:160px;
