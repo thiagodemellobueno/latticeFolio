@@ -14,6 +14,7 @@
 <a href="<?=url::base();?>exhibitions">Exhibitions</a>
 <a href="<?=url::base();?>about">About</a>
 
+
 </div>
 </div>
 

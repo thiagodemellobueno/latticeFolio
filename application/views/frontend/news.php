@@ -11,9 +11,9 @@
 
 
   <div class="grid_7 push_1">
-   <h2><?=$newsItemItem['title'];?></h2>
+   <h3><?=$newsItemItem['title'];?></h3>
 
-   <p class="date"> <?=$newsItemItem['date'];?></p>
+   <h3 class="date"> <?=$newsItemItem['date'];?></h3>
 
    <p class="blurb"> <?=$newsItemItem['blurb'];?></p>
   </div>
