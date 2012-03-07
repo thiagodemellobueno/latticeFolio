@@ -6,16 +6,15 @@
 
 
 <div id="navmenu" class="grid_6 push_1">
-<div class="nav">
-<ul>
+<ul class="nav">
 <li><a href="<?=url::base();?>artists"  class="<?echo latticeview::withinSubtree('artists') ? "active" : "";?>" >Artists</a>
 
-  <ul class="show">
+  <ul class="subnav">
 		<li>
 			<?
 		// assuming artists is the objectType of the artists container
 
-		$artistsContainer =  Graph::object()->objectTypeFilter('artists')->find();
+		$artistsContainer =  Graph::object()->objectTypeFilter('representedArtists')->find();
 
 		$artists = $artistsContainer->latticeChildrenQuery()->objectTypeFilter('artist')->publishedFilter()->find_all();?>
 
@@ -61,7 +60,6 @@
 </ul>
 
 
-</div>
 </div>
 
 

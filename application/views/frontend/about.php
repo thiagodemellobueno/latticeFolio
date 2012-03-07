@@ -2,11 +2,10 @@
 
 <div class="grid_6">
 <?if(is_object($content['main']['image'])):?>
- <img id="image" src="<?=latticeurl::site($content['main']['image']->aboutImage->fullpath);?>" width="<?=$content['main']['image']->aboutImage->width;?>" height="<?=$content['main']['image']->aboutImage->height;?>" alt="<?=$content['main']['image']->aboutImage->filename;?>" />
+	<img title="<?=$content['main']['imageDescription'];?>" id="image" src="<?=latticeurl::site($content['main']['image']->aboutImage->fullpath);?>" width="<?=$content['main']['image']->aboutImage->width;?>" height="<?=$content['main']['image']->aboutImage->height;?>" alt="<?=$content['main']['imageDescription'];?>" />
 <?endif;?>
 
-<p class="introPara"><?=$content['main']['introPara'];?></p>
-
+<p class="intro"><?=$content['main']['intro'];?></p>
 <p class="blurb"> <?=$content['main']['blurb'];?></p>
 </div>
 

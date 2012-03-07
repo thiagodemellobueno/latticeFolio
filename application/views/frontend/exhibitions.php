@@ -6,22 +6,66 @@
 <div class="grid_4">
 
 <ul id="exhibitionGallery" >
-<?foreach($exhibitionItem['exhibitionGallery'] as $exhibitionGalleryItem):?>
-  <li class="galleryImage">
-   
-    <?if(is_object($exhibitionGalleryItem['image'])):?>
-    <img id="image" src="<?=latticeurl::site($exhibitionGalleryItem['image']->original->fullpath);?>" width="<?=$exhibitionGalleryItem['image']->original->width;?>" height="<?=$exhibitionGalleryItem['image']->original->height;?>" alt="<?=$exhibitionGalleryItem['image']->original->filename;?>" />
-   <?endif;?>
 
-  </li>
+<?
+/*
+Original iteration
+?>
+<?foreach($exhibitionItem['exhibitionGallery'] as $exhibitionGalleryItem):?>
+	<li class="galleryImage">
+	<?if(is_object($exhibitionGalleryItem['image'])):?>
+		<img id="image" src="<?=latticeurl::site($exhibitionGalleryItem['image']->original->fullpath);?>" width="<?=$exhibitionGalleryItem['image']->original->width;?>" height="<?=$exhibitionGalleryItem['image']->original->height;?>" alt="<?=$exhibitionGalleryItem['image']->original->filename;?>" />
+	<?endif;?>
+	</li>
 <?endforeach;?>
 </ul>
+*/
+?>
+<?
+//reference problem
+gettype( $test );
+$test = $exhibitionItem['exhibitionGallery'];
+print_r( $test );
+/*
 
 
+Array
+(
+    [0] => Array
+        (
+            [id] => 76
+            [title] => 
+            [slug] => slug0588625001330412186
+            [dateadded] => 2012-03-07 10:26:44
+            [objectTypeName] => galleryImage
+            [image] => Model_File Object
+                (
+                    [imageinfo:Model_File:private] => Array
+                        (
+                        )
 
+                    [object_fields:Model_File:private] => Array
+                        (
+                            [0] => loaded
+                            [1] => id
+                            [2] => filename
+                            [3] => mime
+                        )
 
+                    [_has_one:protected] => Array
+                        (
+                        )
 
-  <img class="thumb" width="221px" height="147"></img>
+                    [_belongs_to:protected] => Array
+                        (
+                        )
+*/
+
+//$testagain = $test[0];
+//print_r( $testagain );
+//$exhibitionItem['exhibitionGallery'][0];
+?>
+
 </div>
 
 <div class="grid_7">

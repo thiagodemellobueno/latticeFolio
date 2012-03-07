@@ -21,8 +21,8 @@
 		<?foreach($worksItem['work'] as $workItem):?>
 			<div class="galleryImage">   
 			<?if(is_object($workItem['image'])):?>
-		     	<a title="<?=$workItem['title']?> <?=$workItem['title']?> <?=$workItem['media'];?> <?=$workItem['dimensions']?>" href="<?=url::base('http').$workItem['slug'];?>">
-					<img src="<?=latticeurl::site($workItem['image']->workImage->fullpath);?>" width="<?=$workItem['image']->workImage->width;?>" height="<?=$workItem['image']->workImage->height;?>" alt="<?=$workItem['title']?> <?=$workItem['title']?> <?=$workItem['media'];?> <?=$workItem['dimensions']?>" />
+				<a title="<?=htmlentities($workItem['title'] . " " . $workItem['title'] . " " . $workItem['media'] . " " . $workItem['dimensions']);?>" href="<?=url::base('http').$workItem['slug'];?>">
+					<img src="<?=latticeurl::site($workItem['image']->workImage->fullpath );?>" width="<?=$workItem['image']->workImage->width;?>" height="<?=$workItem['image']->workImage->height;?>" alt="<?=htmlentities( $workItem['title'] . " " . $workItem['title'] . " " . $workItem['media'] . " " . $workItem['dimensions'] );?>" />
 				</a>
 			<?endif;?>
 			</div>

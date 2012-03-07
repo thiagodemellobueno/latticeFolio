@@ -187,7 +187,8 @@
         <ext>tiff</ext>
         <ext>tif</ext>
       </image>
-      <text name="introPara" label="Intro Paragraph"/>
+      <text name="imageDescription" label="Image Description"/>
+      <text name="intro" label="Intro Paragraph"/>
       <text name="blurb" label="Blurb"/>
     </elements>
   </objectType>
