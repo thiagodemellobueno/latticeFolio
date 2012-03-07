@@ -2,9 +2,9 @@
 
 	<div class="container_12">
 		
-		<h3>
-			<p id="exHeadline" class="floatLeft"><?=$content['main']['title'];?></p>
-		</h3>
+		<h2 class="work-name page-title">
+			<?=$content['main']['title'];?>
+		</h2>
 
 		<div class="shareLinks">
 			<a target="blank" rel="nofollow" href="http://twitter.com/home?status=<?=urlencode( $content['main']['slug'] );?>%20<?=urlencode(url::base('http'));?>exhibitions"> <img src="<?=url::base();?>application/views/images/twitter.png"/></a>
@@ -15,8 +15,11 @@
 		<img id="image" class="workImage" src="<?=latticeurl::site($content['main']['image']->workImageBig->fullpath);?>" width="<?=$content['main']['image']->workImageBig->width;?>" height="<?=$content['main']['image']->workImageBig->height;?>" alt="<?=$content['main']['title'];?> <?=$content['main']['media'];?> <?=$content['main']['dimensions'];?>" />
 		<?endif;?>
 
-		<p class="media"><?=$content['main']['media'];?></p>
-		<p class='dimensions'><?=$content['main']['dimensions'];?></p>
+		<p class="work_meta">
+			<span class="media"><?=$content['main']['media'];?></span>
+			<br/>
+			<span class='dimensions'><?=$content['main']['dimensions'];?></span>
+		</p>
 
 	</div>
 
