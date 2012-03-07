@@ -23,9 +23,14 @@ Original iteration
 ?>
 <?
 //reference problem
-gettype( $test );
 $test = $exhibitionItem['exhibitionGallery'];
+echo gettype( $exhibitionItem['exhibitionGallery'] );
+echo gettype( $test );
+echo "<br/><br/>";
 print_r( $test );
+//$testagain = $test[0];
+// print_r( $testagain );
+
 /*
 
 
@@ -61,9 +66,6 @@ Array
                         )
 */
 
-//$testagain = $test[0];
-//print_r( $testagain );
-//$exhibitionItem['exhibitionGallery'][0];
 ?>
 
 </div>
