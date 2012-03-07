@@ -1,9 +1,9 @@
 
 <div class="container_12">
 
-	<div class="workHeader">
-		<p id="exHeadline" style="float:left;"><?=$content['main']['title'];?></p>
-	</div>
+	<h2 class="artist-name page-title">
+		<?=$content['main']['title'];?>
+	</h2>
 
 	<div class="shareLinks">
 		<a target="blank" rel="nofollow" href="http://twitter.com/home?status=<?=urlencode( $content['main']['slug'] );?>%20<?=urlencode(url::base('http'));?>exhibitions"  class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>"> <img src="<?=url::base();?>application/views/images/twitter.png"/></a>
