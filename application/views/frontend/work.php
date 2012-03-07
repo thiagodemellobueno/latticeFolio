@@ -2,9 +2,9 @@
 
 	<div class="container_12">
 		
-		<div class="workHeader">
+		<h3>
 			<p id="exHeadline" class="floatLeft"><?=$content['main']['title'];?></p>
-		</div>
+		</h3>
 
 		<div class="shareLinks">
 			<a target="blank" rel="nofollow" href="http://twitter.com/home?status=<?=urlencode( $content['main']['slug'] );?>%20<?=urlencode(url::base('http'));?>exhibitions"> <img src="<?=url::base();?>application/views/images/twitter.png"/></a>

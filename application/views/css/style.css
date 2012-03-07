@@ -222,10 +222,8 @@ p.intro{
 	font-weight: 100;
 }
 
-p.dimensions,
-p.media{ 
-	float: left;
-	margin-right: 2em;
+p.work_meta	{ 
+	margin-top: 1em;
 }
 
 .workImage{ clear: both; display: block; }
@@ -293,7 +291,11 @@ footer ul li {margin:0; padding:0;}
 
 
 .workMetaData{width:100%;font-size:12px; margin-top:7px; line-height:24px;}
-.workTitle{float:left; width:200px;}
+
+h2.page-title{
+	float:left;
+	margin-right: 3em;
+}
 
 .mediaInfo{color: #B0B2B5;
 }
