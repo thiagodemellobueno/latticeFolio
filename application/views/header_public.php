@@ -53,10 +53,10 @@
 
   </ul>
 </li>
-<li><a href="<?=url::base();?>news"  class="<?echo latticeview::withinSubtree('news') ? "active" : "";?>" >News</a></li>
+<li><a href="<?=url::base();?>news"  class="<?echo latticeview::withinSubtree('News') ? "active" : "";?>" >News</a></li>
 <li><a href="<?=url::base();?>press"  class="<?echo latticeview::withinSubtree('press') ? "active" : "";?>" >Press</a></li>
 <li><a href="<?=url::base();?>exhibitions"  class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>" >Exhibitions</a></li>
-<li><a href="<?=url::base();?>about"  class="<?echo latticeview::withinSubtree('about') ? "active" : "";?>" >Press</a></li>
+<li><a href="<?=url::base();?>about"  class="<?echo latticeview::withinSubtree('about') ? "active" : "";?>" >About</a></li>
 
 </ul>
 

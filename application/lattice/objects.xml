@@ -99,14 +99,13 @@
         <addableObject objectTypeName="artistLink" addText="Add a Link"/>
       </list>
     </elements>
-    <addableObject objectTypeName="cvListing" addText="Add a CV Listing"/>
-    <components>
-      <component objectTypeName="works" label="Works"/>
-    </components>
-  
+		<addableObject objectTypeName="cvListing" addText="Add a CV Listing"/> 
+		<components>
+      <component objectTypeName="works" label="Works"/>			
+		</components>
   </objectType>
-
-  <objectType name="artistLink" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
+	
+  <objectType name="artistLink" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <elements>
       <text name="link" label="Link"/>
       <text name="linkLabel" label="Link Label"/>
@@ -128,7 +127,7 @@
   </objectType>
 
   <objectType name="works" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <addableObject objectTypeName="work" addText="Work"/>
+  	<addableObject objectTypeName="work" addText="Add a Piece"/>
   </objectType>
 
   <objectType name="work" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
@@ -137,8 +136,8 @@
       <text name="dimensions" label="Dimensions"/>
       <checkbox name="shareLinks" label="Display Share Links"/>
       <image name="image" label="Image">
-        <resize name="workImage" width="619" height="400" forceDimension="height" />
-        <resize name="workImageBig" width="780" height="520" forceDimension="width" />
+        <resize name="workImage" width="619" height="360" forceDimension="height" />
+        <resize name="workImageBig" width="780" height="500" forceDimension="height" />
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>

@@ -2,13 +2,6 @@
 <!DOCTYPE configuration SYSTEM "../../lattice/lattice/lattice/frontend.dtd">
 
 <configuration>
-	<view name="singleIPE">
-		<includeData from="parent" label="something"/>
-	</view>
-
-	<view name="whatever">
-		<includeData from="single-ipe" label="something"/>
-	</view>
 
   <view name="artists">
     <includeData from="represented-artists" label="representedArtists"/>
@@ -21,8 +14,6 @@
     </includeData>
     <includeData from="parent" label="cvListing" objectTypeFilter="cvListing"/>
   </view>
-
-
 
   <view name="exhibitions">
     <includeData from="parent" label="exhibition" objectTypeFilter="exhibition"/>
