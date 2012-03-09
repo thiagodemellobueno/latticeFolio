@@ -21,7 +21,7 @@
     <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
   </objectType>
 
-  <objectType name="galleryImage" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
+  <objectType name="galleryImage" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
       <image name="image" label="Image">
         <resize name="test" width="540" height="360" forceDimension="height" />
@@ -46,7 +46,7 @@
   </objectType>
     
     
-    <objectType name="archivedExhibition" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
+    <objectType name="archivedExhibition" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
       <date name="date" label="Date"/>
       <text name="blurb" label="Blurb"/>
@@ -60,7 +60,7 @@
   </objectType>
 
 
-  <objectType name="exhibition" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
+  <objectType name="exhibition" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="true">
     <elements>
       <date name="startDate" label="StartDate"/>
       <date name="endDate" label="End Date"/>
@@ -133,7 +133,7 @@
   	<addableObject objectTypeName="work" addText="Add a Piece"/>
   </objectType>
 
-  <objectType name="work" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
+  <objectType name="work" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
       <text name="media" label="Media"/>
       <text name="dimensions" label="Dimensions"/>
