@@ -33,8 +33,29 @@ jcacciola = {};
 jcacciola.Application = new Class({
 	slideshows: [],	
 	initialize: function(){
-		var slideshow = new jcacciola.Gallery( document.id("gallery") );
-	},
+		if( document.id("gallery") ) var slideshow = new jcacciola.Gallery( document.id("gallery") );
+		if( $$('.exhibition' ) ) this.resizeExhibitions( $$('li.exhibition') );
+	},	
+	resizeExhibitions: function( exhibitions ){
+		var count = 0;
+		var moduloCount = 3;
+		var targetHeight = 0;
+		var row = [];
+		for( var i=0; i<exhibitions.length; i++ ){
+			var anExhibition = exhibitions[i]
+			var col = ( i%moduloCount );
+			if( anExhibition.getDimensions().height > targetHeight ) targetHeight = anExhibition.getDimensions().height;
+			console.log( ">>", col, targetHeight );
+			row.push( anExhibition );
+			if( col == moduloCount - 1 ){
+				row.each( function( aColItem ){
+					aColItem.setStyle( 'height', targetHeight );
+				});
+				var row = [];
+				targetHeight = 0;
+			}
+	  };
+	}
 });
 
 jcacciola.Gallery = new Class({

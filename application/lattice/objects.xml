@@ -24,7 +24,10 @@
   <objectType name="galleryImage" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
       <image name="image" label="Image">
-        <resize name="test" width="540" height="359" forceDimension="height" />
+        <resize name="test" width="540" height="360" forceDimension="height" />
+        <resize name="exhibitionThumb" width="540" height="360" forceDimension="height" />
+        <resize name="mediumlisting" width="300" height="147" forceDimension="width" />
+        <resize name="smalllisting" width="220" height="147" forceDimension="width" />
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
@@ -48,7 +51,7 @@
       <date name="date" label="Date"/>
       <text name="blurb" label="Blurb"/>
       <image name="image" label="Image">
-        <resize name="archiveImage" width="221" height="147" forceDimension="width" /> 
+        <resize name="archiveImage" width="200" height="147" forceDimension="width" /> 
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
@@ -61,7 +64,7 @@
     <elements>
       <date name="startDate" label="StartDate"/>
       <date name="endDate" label="End Date"/>
-      <text name="headline" label="Headline"/>
+      <text name="subtitle" label="Subtitle"/>
       <text name="blurb" label="Blurb"/>
       <text name="bodyCopy" label="Body Copy"/>
       <file name="PDF" label="PDF">
