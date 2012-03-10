@@ -37,6 +37,7 @@
 		<p class="bio"> <?=$content['main']['bio'];?></p>
 
 		<div id="cvListing" >
+		<?if(count($content['cvListing']) > 0 ):?>
 		<?foreach($content['cvListing'] as $cvListingItem):?>
  		<div class="cvListing">
 			<h3><?=$cvListingItem['title'];?></h3>
@@ -47,22 +48,24 @@
 			</div>
  		</div>
 		<?endforeach;?>
+		<?endif;?>
 	</div>
 </div>
 
 <div class="grid_5 push_1">
 
 	<div class="linksHeader">
-	<?if(is_object($content['main']['bioPDF'])):?>
+	<?if(is_object($content['main']['bioPDF']) > 0):?>
 		<a href="<?=$content['main']['bioPDF']->fullpath;?>"><?=$content['main']['bioPDF']->filename;?><h3 style="float:left;">Download Bio</h3><img style="float:right;" id="pdf" src="<?=url::base();?>application/views/images/icon_pdf.gif"/></a>
 	</div>
 	<?endif;?>
 
+	<?if(count( $content['main']['links'] ) ):?>
 	<h3>Links and other Media</h3>
 	<div id="links" >
 	<?foreach($content['main']['links'] as $linksItem):?>
 		<a href="<?=$linksItem['link'];?>"><?=$linksItem['linkLabel'];?></a>
 	<?endforeach;?>
 	</div>
-
+	<?endif;?>
 </div>

@@ -8,7 +8,7 @@
 		<div class="images" style="width: 6622px;">
 		<?foreach($content['main']['homeGallery'] as $homeGalleryItem):?>
 			<?if(is_object($homeGalleryItem['image'])):?>
-			<img class="galleryImage" src="<?=latticeurl::site($homeGalleryItem['image']->original->fullpath);?>" width="<?=$homeGalleryItem['image']->original->width;?>" height="<?=$homeGalleryItem['image']->original->height;?>" alt="<?=$homeGalleryItem['image']->original->filename;?>" />
+			<img class="galleryImage" src="<?=latticeurl::site($homeGalleryItem['image']->exhibitionThumb->fullpath);?>" width="<?=$homeGalleryItem['image']->exhibitionThumb->width;?>" height="<?=$homeGalleryItem['image']->exhibitionThumb->height;?>" alt="<?=$homeGalleryItem['image']->exhibitionThumb->filename;?>" />
 			<?endif;?>
 		<?endforeach;?>
 		</div>
