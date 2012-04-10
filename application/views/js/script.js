@@ -65,12 +65,14 @@ jcacciola.Application = new Class({
 	
 	showPreview: function( e, prevelement, src ){
 		e.preventDefault();
-		if( !prevelement.getElement('img') ){
-			prevelement.grab( new Element( 'img' ) );
-		}
-		// prevelement.removeClass('hidden');
+		prevelement.empty();
 		prevelement.setStyle('visibility','visible');
-		prevelement.getElement('img').set( 'src', src );
+		prevelement.spin();
+		this.imgAsset = new Asset.image( src, {  onload: function(img){ 
+			console.log( arguments );
+			prevelement.grab( img );
+		}});
+
 	},
 	
 	hidePreview: function(e, prevelement ){
