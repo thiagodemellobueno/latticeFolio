@@ -108,12 +108,12 @@ ul#nav a:hover {
 	border-bottom:1px solid black;
 }
 
-ul#nav ul.subnav a.active,
-ul#nav ul.subnav a:hover {
+ul#nav .subnav a.active,
+ul#nav .subnav a:hover {
 	border-bottom:1px solid #dedede;
 }
 
-ul#nav ul.subnav ul.worksAvailableArtists a{
+ul#nav .subnav ul.worksAvailableArtists a{
 	color:#999;
 }
 
@@ -122,7 +122,7 @@ ul#nav li {
 	display:inline-block;
 }
 
-ul#nav li ul.subnav{ 
+ul#nav li .subnav{ 
 	display: none;
 	position: absolute;
 	top: 1.25em;
@@ -132,13 +132,30 @@ ul#nav li ul.subnav{
 	z-index:7;
  }
 
-ul#nav li.active ul.subnav{ 
-	display: block;
+ul#nav .subnav ul ul{
+	float: left;
+	width: 160px;
+	margin-right: 1em;
 }
 
-ul#nav ul.subnav ul{ float: left; width: 160px; margin-right: 1em; }
+.preview,
+.artistsPreview{
+	visibility: hidden;
+	background:#fff;
+	padding: 10px;
+	float: left;
+	width: 250px;
+	-moz-box-shadow: 1px 1px 3px #dedede;
+	-webkit-box-shadow: 1px 1px 3px #dedede;
+	box-shadow: 1px 1px 3px #dedede;
+}
 
-ul#nav ul.subnav li,
+.artistsPreview{
+	position: absolute;
+	left: -290px;
+}
+
+ul#nav .subnav li,
 ul#nav li:hover .subnav{ display: block; }
 
 #main p {

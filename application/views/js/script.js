@@ -37,11 +37,46 @@ jcacciola.Application = new Class({
 		if( $$('.exhibition' ) ) this.resizeExhibitions( $$('li.exhibition') );
 		this.artistsNav = $('artistsNav');
 		// Mobile Platforms
+		this.artistsPreviewNav = this.artistsNav.getElement('.artistsPreview');
 		if( Browser.Platform.ios || Browser.Platform.android || Browser.Platform.webos ){
 			this.artistsNav.getElement('a').addEvent( 'mouseover', function( e ){ e.preventDefault() }.bindWithEvent( this ) );
 			this.artistsNav.getElement('a').addEvent( 'click', this.showSubmenu.bindWithEvent( this, this.artistsNav ) );
+		}else{
+			this.artistsNav.getElements(".subnav a").each( function( alink ){
+				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
+				this.artistsNav.addEvent( 'mouseleave', this.hidePreview.bindWithEvent( this, this.artistsPreviewNav ) );
+			}, this );
 		}
+		if( $('representedArtists') ){
+			$('representedArtists').getElements("a").each( function( alink ){
+				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
+			}, this );			
+			$('representedArtists').addEvent( 'mouseleave', this.hidePreview.bindWithEvent( this, $('artistListing').getElement('.preview') ) );
+		}
+
+		if( $('worksAvailArtists') ){
+			$('worksAvailArtists').getElements("a").each( function( alink ){
+				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
+			}, this );			
+			$('worksAvailArtists').addEvent( 'mouseleave', this.hidePreview.bindWithEvent( this, $('artistListing').getElement('.preview') ) );
+		}
+		
 	},	
+	
+	showPreview: function( e, prevelement, src ){
+		e.preventDefault();
+		if( !prevelement.getElement('img') ){
+			prevelement.grab( new Element( 'img' ) );
+		}
+		// prevelement.removeClass('hidden');
+		prevelement.setStyle('visibility','visible');
+		prevelement.getElement('img').set( 'src', src );
+	},
+	
+	hidePreview: function(e, prevelement ){
+		e.preventDefault();
+		prevelement.setStyle('visibility','hidden');
+	},
 	
 	showSubmenu: function( e ){
 		e.preventDefault();
