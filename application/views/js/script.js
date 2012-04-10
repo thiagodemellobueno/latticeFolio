@@ -34,7 +34,7 @@ jcacciola.Application = new Class({
 	slideshows: [],	
 	initialize: function(){
 		if( document.id("gallery") ) var slideshow = new jcacciola.Gallery( document.id("gallery") );
-		if( $$('.exhibition' ) ) this.resizeExhibitions( $$('li.exhibition') );
+		if( $('exhibitions' ) ) this.resizeExhibitions( $('exhibitions' ).getElements('li.exhibition') );
 		this.artistsNav = $('artistsNav');
 		// Mobile Platforms
 		this.artistsPreviewNav = this.artistsNav.getElement('.artistsPreview');
@@ -97,20 +97,23 @@ jcacciola.Application = new Class({
 		var count = 0;
 		var moduloCount = 3;
 		var targetHeight = 0;
-		var row = [];
-		for( var i=0; i<exhibitions.length; i++ ){
-			var anExhibition = exhibitions[i]
+		this.row = [];
+		exhibitions.each( function( anExhibition, i ){
+			console.log( anExhibition, i, anExhibition.getSize().y, targetHeight, anExhibition.getSize().y > targetHeight );
 			var col = ( i%moduloCount );
-			if( anExhibition.getDimensions().height > targetHeight ) targetHeight = anExhibition.getDimensions().height;
-			row.push( anExhibition );
+			if( anExhibition.getSize().y > targetHeight ) targetHeight = anExhibition.getCoordinates().height;
+			console.log( this.row, targetHeight );
+			this.row.include( anExhibition );
+			console.log( col, moduloCount-1, col == moduloCount-1 );
+			this.row.each( function( aColItem ){
+				console.log( "targetHeight", targetHeight );
+				aColItem.setStyle( 'height', targetHeight );
+			});
 			if( col == moduloCount - 1 ){
-				row.each( function( aColItem ){
-					aColItem.setStyle( 'height', targetHeight );
-				});
-				var row = [];
+				this.row = [];
 				targetHeight = 0;
 			}
-	  };
+	  }, this );
 	}
 });
 

@@ -140,7 +140,6 @@ ul#nav .subnav ul ul{
 
 .preview,
 .artistsPreview{
-	min-height: 150px;
 	visibility: hidden;
 	background:#fff;
 	padding: 10px;
@@ -374,9 +373,10 @@ h3{
 #exhibition h2{
 	margin: 0 0 .5em 0;
 }
+
 li.exhibition{
 	border-bottom:1px #dedede solid;
-	padding-top: 1em;
+	margin-top: 1em;
 	margin-bottom: 1em;
 }
 
