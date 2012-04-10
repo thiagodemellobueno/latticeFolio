@@ -70,6 +70,7 @@ jcacciola.Application = new Class({
 		prevelement.spin();
 		this.imgAsset = new Asset.image( src, {  onload: function(img){ 
 			console.log( arguments );
+			prevelement.empty();
 			prevelement.grab( img );
 		}});
 

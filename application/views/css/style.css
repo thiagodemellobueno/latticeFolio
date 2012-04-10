@@ -140,6 +140,7 @@ ul#nav .subnav ul ul{
 
 .preview,
 .artistsPreview{
+	min-height: 150px;
 	visibility: hidden;
 	background:#fff;
 	padding: 10px;
