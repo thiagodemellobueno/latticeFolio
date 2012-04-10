@@ -44,16 +44,23 @@ jcacciola.Application = new Class({
 		}else{
 			this.artistsNav.getElements(".subnav a").each( function( alink ){
 				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
-				alink.addEvent( 'mouseout', this.hidePreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
+				this.artistsNav.addEvent( 'mouseleave', this.hidePreview.bindWithEvent( this, this.artistsPreviewNav ) );
 			}, this );
 		}
-		if( $('artistListing') ){
-			$('artistListing').getElements("a").each( function( alink ){
+		if( $('representedArtists') ){
+			$('representedArtists').getElements("a").each( function( alink ){
 				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
-				alink.addEvent( 'mouseout', this.hidePreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
 			}, this );			
+			$('representedArtists').addEvent( 'mouseleave', this.hidePreview.bindWithEvent( this, $('artistListing').getElement('.preview') ) );
 		}
 
+		if( $('worksAvailArtists') ){
+			$('worksAvailArtists').getElements("a").each( function( alink ){
+				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
+			}, this );			
+			$('worksAvailArtists').addEvent( 'mouseleave', this.hidePreview.bindWithEvent( this, $('artistListing').getElement('.preview') ) );
+		}
+		
 	},	
 	
 	showPreview: function( e, prevelement, src ){
@@ -69,7 +76,6 @@ jcacciola.Application = new Class({
 	hidePreview: function(e, prevelement ){
 		e.preventDefault();
 		prevelement.setStyle('visibility','hidden');
-		// prevelement.addClass('hidden');
 	},
 	
 	showSubmenu: function( e ){

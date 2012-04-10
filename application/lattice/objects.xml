@@ -70,7 +70,7 @@
   </objectType>
 
 
-  <objectType name="exhibition" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="true">
+  <objectType name="exhibition" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
       <image name="image" label="Listing Image">
       	<resize name="mediumlisting" width="300" height="150" forceDimension="width" crop="false" />
