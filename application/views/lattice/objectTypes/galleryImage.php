@@ -1,9 +1,9 @@
 <?$instance=$data['instance'];?>
 <li data-objectid="<?=$data['id'];?>" id="item_<?=$data['id'];?>" class="listItem grid_4"> 
 
-	<?foreach($uiElements as $htmlChunk):?>
-		<?=$htmlChunk;?>
-	<?endforeach;?>
+	<?=$image_image;?>
+	<?=$text_header;?>
+	<?=$text_description;?>
 
 	<div class="itemControls clearFix">
 		<a href="#" title="delete this list item" class="icon delete">delete</a>
