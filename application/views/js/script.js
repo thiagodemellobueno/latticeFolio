@@ -37,11 +37,40 @@ jcacciola.Application = new Class({
 		if( $$('.exhibition' ) ) this.resizeExhibitions( $$('li.exhibition') );
 		this.artistsNav = $('artistsNav');
 		// Mobile Platforms
+		this.artistsPreviewNav = this.artistsNav.getElement('.artistsPreview');
 		if( Browser.Platform.ios || Browser.Platform.android || Browser.Platform.webos ){
 			this.artistsNav.getElement('a').addEvent( 'mouseover', function( e ){ e.preventDefault() }.bindWithEvent( this ) );
 			this.artistsNav.getElement('a').addEvent( 'click', this.showSubmenu.bindWithEvent( this, this.artistsNav ) );
+		}else{
+			this.artistsNav.getElements(".subnav a").each( function( alink ){
+				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
+				alink.addEvent( 'mouseout', this.showPreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
+			}, this );
 		}
+		if( $('artistListing') ){
+			$('artistListing').getElements("a").each( function( alink ){
+				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
+				alink.addEvent( 'mouseout', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
+			}, this );			
+		}
+
 	},	
+	
+	showPreview: function( e, prevelement, src ){
+		e.preventDefault();
+		if( !prevelement.getElement('img') ){
+			prevelement.grab( new Element( 'img' ) );
+		}
+		// prevelement.removeClass('hidden');
+		prevelement.setStyle('visibility','visible');
+		prevelement.getElement('img').set( 'src', src );
+	},
+	
+	hidePreview: function(e, prevelement ){
+		e.preventDefault();
+		prevelement.setStyle('visibility','hidden');
+		// prevelement.addClass('hidden');
+	},
 	
 	showSubmenu: function( e ){
 		e.preventDefault();
