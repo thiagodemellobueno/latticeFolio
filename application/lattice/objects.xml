@@ -14,6 +14,15 @@
       <list name="homeGallery" label="Home Image Gallery" allowChildSort="true">
         <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
       </list>
+
+      <text name="upcomingTitle" label="Upcoming Title"/>
+      <text name="upcomingBlurb" label="Upcoming Blurb"/>
+      <text name="upcomingLink" label="Upcoming Link"/>
+      <image name="upcomingImage" label="Upcoming Image">
+        <resize name="frontend" width="200" height="180" forceDimension="width" crop="true" /> 
+        <ext>jpg</ext>
+      </image>
+
     </elements>
   </objectType>
 
@@ -24,10 +33,10 @@
   <objectType name="galleryImage" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
       <image name="image" label="Image">
-        <resize name="test" width="540" height="360" forceDimension="height" />
+        <resize name="ui-thumb" width="220" height="220" forceDimension="width" />
         <resize name="exhibitionThumb" width="540" height="360" forceDimension="height" />
-        <resize name="mediumlisting" width="300" height="147" forceDimension="width" />
-        <resize name="smalllisting" width="220" height="147" forceDimension="width" />
+        <resize name="mediumlisting" width="300" height="150" forceDimension="width" crop="false" aspectFollowsOrientation="false" />
+        <resize name="smalllisting" width="220" height="150" forceDimension="width" />
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
@@ -44,24 +53,30 @@
   <objectType name="olderExhibitions" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <addableObject objectTypeName="archivedExhibition" addText="add an Archived Exhibition"/>
   </objectType>
-    
-    
+   
     <objectType name="archivedExhibition" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
+
     <elements>
       <date name="date" label="Date"/>
       <text name="blurb" label="Blurb"/>
       <image name="image" label="Image">
-        <resize name="archiveImage" width="200" height="147" forceDimension="width" /> 
+        <resize name="archiveImage" width="200" height="180" forceDimension="width" crop="true" /> 
         <ext>jpg</ext>
-        <ext>tiff</ext>
-        <ext>tif</ext>
       </image>
+      <file name="PDF" label="PDF">
+        <ext>PDF</ext>
+      </file>
     </elements>
   </objectType>
 
 
   <objectType name="exhibition" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="true">
     <elements>
+      <image name="image" label="Listing Image">
+      	<resize name="mediumlisting" width="300" height="150" forceDimension="width" crop="false" />
+      	<resize name="smalllisting" width="220" height="150" forceDimension="width" />
+        <ext>jpg</ext>
+  		</image>
       <date name="startDate" label="StartDate"/>
       <date name="endDate" label="End Date"/>
       <text name="subtitle" label="Subtitle"/>
@@ -137,7 +152,8 @@
     <elements>
       <text name="media" label="Media"/>
       <text name="dimensions" label="Dimensions"/>
-      <checkbox name="shareLinks" label="Display Share Links"/>
+      <checkbox name="privatecollection" label="Is part of a private collection?"/>
+      <!-- <checkbox name="shareLinks" label="Display Share Links"/> -->
       <image name="image" label="Image">
         <resize name="workImage" width="619" height="360" forceDimension="height" />
         <resize name="workImageBig" width="780" height="500" forceDimension="height" />
@@ -193,9 +209,21 @@
       <text name="imageDescription" label="Image Description"/>
       <text name="intro" label="Intro Paragraph"/>
       <text name="blurb" label="Blurb"/>
+      <list name="contacts" label="Contacts" allowChildSort="true">
+        <addableObject objectTypeName="contactPerson" addText="Add a Contact"/>
+      </list>
     </elements>
   </objectType>
 
+  <objectType name="contactPerson" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
+    <elements>
+      <text name="name" label="Name"/>
+      <text name="title" label="Title"/>
+      <text name="phone" label="Phone"/>
+      <text name="email" label="Email"/>
+		</elements>
+	</objectType>
+	
 </objectTypes>
 
 

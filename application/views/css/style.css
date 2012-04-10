@@ -3,6 +3,9 @@
 @import url('960.css');
 @import url('text.css'); 
 
+.upcoming{
+	margin-top:4em;
+}
 /* HTML5 Boilerplate  */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
@@ -39,7 +42,7 @@ sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: b
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
-ul, ol { margin: 1em 0; padding: 0 0 0 1em; }
+ul, ol { margin: 1em 0; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -119,7 +122,7 @@ ul#nav li {
 	display:inline-block;
 }
 
-ul#nav ul.subnav{ 
+ul#nav li ul.subnav{ 
 	display: none;
 	position: absolute;
 	top: 1.25em;
@@ -129,6 +132,10 @@ ul#nav ul.subnav{
 	z-index:7;
  }
 
+ul#nav li.active ul.subnav{ 
+	display: block;
+}
+
 ul#nav ul.subnav ul{ float: left; width: 160px; margin-right: 1em; }
 
 ul#nav ul.subnav li,
@@ -136,7 +143,6 @@ ul#nav li:hover .subnav{ display: block; }
 
 #main p {
 	margin-left:0;
-	padding-bottom:12em;
 }
 
 #representedArtists a{
@@ -148,32 +154,23 @@ ul#nav li:hover .subnav{ display: block; }
 #worksAvailArtists{
   padding-top:37px;
 }
+
 #worksAvailArtists a{
+	display: block;
+  clear:both;
 	color:#999;
 	line-height:24px;
-  clear:both;
   font-style: normal;
-  font-weight: 300;}
+  font-weight: 300;
+}
 
 .thumb{
   padding:0px 0px 3em 0;
 }
 
-/*.blurb{
-  margin-bottom:3em;
+#wrapper{
+  padding-bottom:8em;
 }
-*/
-.theBottom{
-  padding-bottom:12em;
-}
-.theBottom2{
-  padding-bottom:6em;
-}
-
-.theBottom2 a{
-  text-decoration:none;
-}
-
 
 #cvListing{
   margin-bottom:12em;
@@ -183,26 +180,25 @@ ul#nav li:hover .subnav{ display: block; }
   float:left;
 }
 
-.shareLinks{
-  padding-top:7px;
-  padding-left:7px;
-  width:45px;
-  float:left;
-  
-}
-
-.linksHeader{
-  width:131px;
-  height:50px;
-}
-
 #exHeadline{
 	font-style: normal;
 	font-weight: 100;
 }
 
-h3.headline{
+h3.title{
 	margin: 1em 0 0 0;
+}
+
+.contacts ul li{
+	font-weight: 300;
+	border-bottom: 1px #ededed solid;
+	padding-bottom: .5em;
+	margin-bottom: 1.5em;
+}
+
+h3.headline{
+	font-size: 24px;
+	font-weight: 100;
 }
 
 h4.date{
@@ -210,85 +206,67 @@ h4.date{
 }
 
 p.intro{
-	margin-top:2em;
-	font-size:24px;  
+	letter-spacing: 1px;
+	margin-top:0;
+	font-size:24px; 
+	line-height:1.25;
   font-style: normal;
 	font-weight: 100;
 }
 
-p.work_meta	{ 
-	margin-top: 1em;
+p.work_meta	{
+	clear: both; 
+	margin-top: 0 !important;
+}
+
+.pdflink{
+	clear: both;
+	background: url( ../images/icon_pdf.gif ) no-repeat;
+	padding: 0 0 0 2em;
+	margin: .45em 0 0 0;
 }
 
 .workImage{ clear: both; display: block; }
-footer { position:fixed; bottom:0; padding-top:1em; background: #fff; }
-footer ul {margin:0; padding:0; list-style:none;}
-footer ul li {margin:0; padding:0;}
+#footer { width: 100%; position:fixed; bottom:0; padding-top:1em; background: #fff; }
+#footer ul { margin:0; padding:0; list-style:none;}
+#footer ul li { margin:0; padding:0;}
 
-
-
-@media only screen and ( max-width: 799px ) {
-		div.slideshow .pane{
-			width: 100%;
-			overflow: auto;
-		}
-		div.slideshow .galleryImage{
-			display: block;
-			float: left;
-			margin: 0 1em 1em 0em;	
-  }
-
-		#main{
-			padding: 2em;
-		}
-		div.slideshow div.images{
-		    position:static;
-		}
-		footer { position:static; background:#fff;}
-		
-}
-@media only screen and ( min-width: 800px ) {
-  /* Style adjustments for viewports that meet the condition */
-	div.slideshow{
-	    position:relative;
-	    margin: 0 0 2em 0 !important;
-	}
-
-	div.slideshow .pane{
-	    overflow: hidden;   
-	}
-
-	div.slideshow div.images{
-	    position:relative;
-	    bottom:0;
-	    white-space: nowrap;
-			padding: 0 12em 0 1em;
-	}
-
-	div.slideshow .galleryImage{
-	    display: inline-block;
-	    margin: 0 0 0 .5em;
-	  
-  }
-}
-
-@media only screen  {
-
-
-
-
-  
-
-}
 
 /* -- slideshow ------------------------------------------- */
 
+div.slideshow .pane{
+  overflow: hidden;   
+}
+
+div.slideshow{
+	height: 360px;    
+	position:relative;
+	margin: 0 0 2em 0 !important;
+}
+
+div.slideshow div.images{
+	position:relative;
+	bottom:0;
+	white-space: nowrap;
+	padding: 0 12em 0 0;
+}
+
+div.slideshow .galleryImage{
+   display: inline-block;
+   margin: 0 0 0 .5em;
+}
 
 .workMetaData{width:100%;font-size:12px; margin-top:7px; line-height:24px;}
 
+h3.page-title,
 h2.page-title{
-	float:left;
 	margin-right: 3em;
+}
+
+h3.page-title{
+	margin: .675em 3em 0 0;
+	font-weight: 100;
+	font-size: 15px;
 }
 
 .mediaInfo{color: #B0B2B5;
@@ -328,7 +306,9 @@ div.slideshowNext a:focus{
     outline: none;
 }
 
-
+#map{
+	margin-bottom:2em;
+}
 
 /* -- end slideshow ------------------------------------------- */
 
@@ -357,9 +337,54 @@ div.slideshowNext a:focus{
   h2, h3 { page-break-after: avoid; }
 }
 
+h2.homeTitle{
+	margin-bottom: .25em;
+}
+
+h3{
+	margin-bottom: .5em !important;
+}
+
+#exhibition .blurb{
+	font-weight: 700;
+}
+
+#exhibition{
+	margin-top: 1em;
+}
+
+#exhibition h2{
+	margin: 0 0 .5em 0;
+}
 li.exhibition{
 	border-bottom:1px #dedede solid;
 	padding-top: 1em;
 	margin-bottom: 1em;
 }
 
+#exhibitions{ margin-bottom: 3em; }
+
+#olderExhibitions h4.dates,
+li.exhibition h4.dates{
+	font-weight: 100;
+}
+
+#exhibition h3.dates{
+	font-weight: 300;
+}
+
+#olderExhibitions h3.headline,
+#olderExhibitions h4.dates,
+#olderExhibitions p.blurb,
+li.exhibition p.blurb{
+	font-size: 12px;
+}
+
+
+.shareLinks{
+	margin: 0 0 0 0;
+}
+
+.pressitem{
+	margin-bottom: 4em;
+}

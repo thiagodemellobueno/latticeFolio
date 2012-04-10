@@ -1,5 +1,5 @@
-<div class="museo container_12">
-	<footer>
+<div id="footer">
+	<div class="container_12 museo">
 		<div class="grid_3 alpha">
 			<ul id="contact">
 				<li>J. Cacciola Gallery</li>
@@ -24,12 +24,12 @@
 				<li><a href="">our twitter</a></li>
 			</ul>
 		</div>
-	</footer>  
+	</div>
 </div>
 
 <script type="text/javascript">
 	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-29458104-1']);
+	_gaq.push(['_setAccount', 'UA-29042751-1``']);
 	_gaq.push(['_trackPageview']);
 	(function() {
 		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
@@ -37,4 +37,3 @@
 		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	})();
 </script>
-

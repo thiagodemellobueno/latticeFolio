@@ -6,7 +6,7 @@
 		
 		<ul id="nav" class="grid_5 push_1 omega">
 
-			<li><a href="<?=url::base();?>artists"  class="<?echo latticeview::withinSubtree('artists') ? "active" : "";?>" >Artists</a>
+			<li id="artistsNav" ><a href="<?=url::base();?>artists"  class="<?echo latticeview::withinSubtree('artists') ? "active" : "";?>" >Artists</a>
 
 				<ul class="subnav">
 
@@ -16,7 +16,7 @@
 
 					$artistsContainer =  Graph::object()->objectTypeFilter('representedArtists')->find();
 
-					$artists = $artistsContainer->latticeChildrenQuery()->objectTypeFilter('artist')->publishedFilter()->find_all();?>
+					$artists = $artistsContainer->latticeChildrenQuery()->objectTypeFilter('artist')->publishedFilter()->order_by('objectrelationships.sortorder')->find_all();?>
 
 					<?if( count($artists) > 0 ):?>
 
@@ -34,7 +34,7 @@
 
 					<?$wrArtistsContainer =  Graph::object()->objectTypeFilter('worksAvailableArtists')->find();?>
 		
-					<?$wrArtists = $wrArtistsContainer->latticeChildrenQuery()->objectTypeFilter('artist')->publishedFilter()->find_all();?>
+					<?$wrArtists = $wrArtistsContainer->latticeChildrenQuery()->objectTypeFilter('artist')->publishedFilter()->order_by('objectrelationships.sortorder')->find_all();?>
 
 					<?if( count($wrArtists) > 0 ):?>
 
@@ -57,8 +57,8 @@
 			</li>
 
 			<li class="hidden"><a href="<?=url::base();?>news"  class="<?echo latticeview::withinSubtree('News') ? "active" : "";?>" >News</a></li>
-			<li class="hidden"><a href="<?=url::base();?>press"  class="<?echo latticeview::withinSubtree('press') ? "active" : "";?>" >Press</a></li>
-			<li class="hidden"><a href="<?=url::base();?>exhibitions"  class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>" >Exhibitions</a></li>
+			<li><a href="<?=url::base();?>press"  class="<?echo latticeview::withinSubtree('press') ? "active" : "";?>" >Press</a></li>
+			<li><a href="<?=url::base();?>exhibitions"  class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>" >Exhibitions</a></li>
 			<li><a href="<?=url::base();?>about"  class="<?echo latticeview::withinSubtree('about') ? "active" : "";?>" >About</a></li>
 
 		</ul>
