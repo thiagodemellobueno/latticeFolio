@@ -157,6 +157,7 @@
       <image name="image" label="Image">
         <resize name="workImage" width="619" height="360" forceDimension="height" />
         <resize name="workImageBig" width="780" height="500" forceDimension="height" />
+        <resize name="previewThumb" width="250" height="200" forceDimension="width" />
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
@@ -218,7 +219,7 @@
   <objectType name="contactPerson" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
       <text name="name" label="Name"/>
-      <text name="title" label="Title"/>
+      <text name="contactPersonTitle" label="Title"/>
       <text name="phone" label="Phone"/>
       <text name="email" label="Email"/>
 		</elements>
