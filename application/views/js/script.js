@@ -44,13 +44,13 @@ jcacciola.Application = new Class({
 		}else{
 			this.artistsNav.getElements(".subnav a").each( function( alink ){
 				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
-				alink.addEvent( 'mouseout', this.showPreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
+				alink.addEvent( 'mouseout', this.hidePreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
 			}, this );
 		}
 		if( $('artistListing') ){
 			$('artistListing').getElements("a").each( function( alink ){
 				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
-				alink.addEvent( 'mouseout', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
+				alink.addEvent( 'mouseout', this.hidePreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
 			}, this );			
 		}
 
