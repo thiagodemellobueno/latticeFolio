@@ -28,9 +28,12 @@
 							<li>
 								<?$works=$artist->latticeChildrenQuery()->objectTypeFilter('works')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
 								<?$work = $works->latticeChildrenQuery()->objectTypeFilter('work')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
-								<a data-previewsrc="<?=$work->image->previewThumb->fullpath;?>" href="<?=latticeurl::site($artist->slug);?>" class="<?echo latticeview::withinSubtree($artist->slug) ? "active" : "";?>" >
-								<?=$artist->title;?>
+								<?php if (is_object($work) && is_object($work->image)):?>
+								<a data-previewsrc="<?php echo $work->image->previewThumb->fullpath;?>" href="<?php latticeurl::site($artist->slug);?>" class="<?php echo latticeview::withinSubtree($artist->slug) ? "active" : "";?>" >
+							    <?=$artist->title;?>
 								</a>
+								<?php endif?>
+								
 							</li>
 						<?endforeach;?>
 					</ul>
@@ -67,8 +70,11 @@
 			<li class="hidden"><a href="<?=url::base();?>news" class="<?echo latticeview::withinSubtree('News') ? "active" : "";?>" >News</a></li>
 			<li><a href="<?=url::base();?>press" class="<?echo latticeview::withinSubtree('press') ? "active" : "";?>" >Press</a></li>
 			<li><a href="<?=url::base();?>exhibitions" class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>" >Exhibitions</a></li>
-			<li><a href="<?=url::base();?>about" class="<?echo latticeview::withinSubtree('about') ? "active" : "";?>" >About</a></li>
-
+			<?php try {?>
+			<li><a href="<?=url::base();?>about" class="<?php  echo latticeview::withinSubtree('about') ? "active" : "";?>" >About</a></li>
+      <?php }  catch (Exception $e) {
+        
+      }?>
 		</ul>
 	</div>
 
