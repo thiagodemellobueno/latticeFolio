@@ -1,10 +1,9 @@
 <div class="container_12">	
 		<?if(is_object($content['main']['image'])):?>
-		  <div class="artistNameAndSlug">
 		    <?php
+		    //find the right parent object for an artist (leave this at the top fo the page)
 		    //start our search for the parent object by loading a lattice object for what we have on the page
           $artist = Graph::object($content["main"]["id"]);
-
 		      //first, get the id for an 'artist' content type
  		      $artist_type_id = ORM::Factory('objecttype')->where('objecttypename','=','artist')->find()->as_array('id');
           $artist_type_id = $artist_type_id["id"];
@@ -14,9 +13,13 @@
             $max++;
             $artist= $artist->getLatticeParent();
           }
-          //if we don't find an artist, the conditional prevents this from being rendered
 		    ?>
-		    <?php if ($artist->objecttype_id ==$artist_type_id):?>
+
+  	  <!-- display your artist name and slug here (move this to wherever it fits the design) -->
+  	  <div class="artistNameAndSlug">
+        <?php 
+        //if we don't find an artist, the conditional prevents this from being rendered
+        if ($artist->objecttype_id ==$artist_type_id):?>
 		    <h2>Artist Name</h2>
 		    <?= $artist->title?>
 		    <h3>Slug</h3>
@@ -25,7 +28,7 @@
 		      This is an orphan content object, put some message here 
 		    <?php endif?>
 		  </div>
-
+    
 			<img id="image" class="workImage" src="<?=latticeurl::site($content['main']['image']->workImageBig->fullpath);?>" width="<?=$content['main']['image']->workImageBig->width;?>" height="<?=$content['main']['image']->workImageBig->height;?>" alt="<?=$content['main']['title'];?> <?=$content['main']['media'];?> <?=$content['main']['dimensions'];?>" />
 		<?endif;?>
 		
