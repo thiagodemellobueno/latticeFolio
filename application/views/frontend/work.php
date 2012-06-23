@@ -4,6 +4,20 @@
 		    //find the right parent object for an artist (leave this at the top fo the page)
 		    //start our search for the parent object by loading a lattice object for what we have on the page
           $artist = Graph::object($content["main"]["id"]);
+
+          //get the prev and next links from the collection
+          //sortorder field isn't in this version of lattice? 
+          //sorting on slug, which seems iffy.
+          $parent = $artist->getLatticeParent();
+          $collection = Graph::object()->latticeChildrenFilter($parent->id, 'lattice')->publishedFilter();
+          $next_id =  $collection->next('slug',$content["main"]["id"]);
+          $prev_id =  $collection->prev('slug',$content["main"]["id"]);
+         
+          //now get the slugs from the id's (load the objects)
+          $next = Graph::object($next_id);
+          $prev = Graph::object($prev_id);
+          
+         
 		      //first, get the id for an 'artist' content type
  		      $artist_type_id = ORM::Factory('objecttype')->where('objecttypename','=','artist')->find()->as_array('id');
           $artist_type_id = $artist_type_id["id"];
@@ -13,8 +27,25 @@
             $max++;
             $artist= $artist->getLatticeParent();
           }
+          
+          
 		    ?>
-
+      <div class="nextPrev">
+        <?php if (strlen($prev->title)>0):?>
+        <div class="prev">
+          Prev:
+          <a href="/<?=$prev->slug?>"><?=$prev->title?></a>
+        </div>
+        <?php endif;?>
+        <?php if (strlen($next->title)>0):?>
+        <div class="next">
+          Next:
+          <a href="/<?=$next->slug?>"><?=$next->title?></a>
+        </div>
+        <?php endif?>
+        
+      </div>
+      
   	  <!-- display your artist name and slug here (move this to wherever it fits the design) -->
   	  <div class="artistNameAndSlug">
         <?php 
