@@ -17,8 +17,8 @@
 <div id="exhibition" class="container_12">
 	<h2 class="grid_7 alpha"> <?=$content['main']['title'];?></h2>
 	<div class="shareLinks grid_4">
-		<a target="blank" rel="nofollow" href="http://twitter.com/home?status=<?=urlencode( $content['main']['slug'] );?>%20<?=urlencode(url::base('http'));?>exhibitions"> <img src="<?=url::base();?>application/views/images/twitter.png"/></a>
-		<a target="blank" rel="nofollow" href="http://www.facebook.com/sharer.php?u=<?=urlencode(url::base('http').$content['main']['slug']);?>&t=<?=urlencode($content['main']['title']);?>"><img src="<?=url::base();?>application/views/images/facebook.png"/></a> 
+		<a target="blank" rel="nofollow" href="http://twitter.com/home?status=<?=urlencode( $content['main']['slug'] );?>%20<?=urlencode(url::base('http'));?>exhibitions"> <img src="<?=url::base();?>application/resources/images/twitter.png"/></a>
+		<a target="blank" rel="nofollow" href="http://www.facebook.com/sharer.php?u=<?=urlencode(url::base('http').$content['main']['slug']);?>&t=<?=urlencode($content['main']['title']);?>"><img src="<?=url::base();?>application/resources/images/facebook.png"/></a> 
 	</div>
 	<h3 class="dates grid_12 alpha"><?=date( "F j, Y", strtotime( $content['main']['startDate'] ) );?>-<?=date( "F j, Y", strtotime( $content['main']['endDate'] ) );?></h3>
 

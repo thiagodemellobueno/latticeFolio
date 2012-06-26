@@ -2,7 +2,7 @@
 
 	<div class="header clearfix">
 
-		<h1 id="logo"><a href="<?=url::base();?>home"><img src="application/views/images/j-cacciola-gallery-logo.png" width="451" height="46" alt="J. Cacciola Gallery" /></a></h1>
+		<h1 id="logo"><a href="<?=url::base();?>home"><img src="application/resources/images/j-cacciola-gallery-logo.png" width="451" height="46" alt="J. Cacciola Gallery" /></a></h1>
 		
 		<ul id="nav" class="grid_5 push_1 omega">
 
