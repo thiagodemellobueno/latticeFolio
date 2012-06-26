@@ -28,3 +28,6 @@
 [submodule "lattice"]
 	path = lattice
 	url = git@github.com:codebase/lattice-3.0.git
+[submodule "modules/lattice"]
+	path = modules/lattice
+	url = git@github.com:deepwinter/lattice
