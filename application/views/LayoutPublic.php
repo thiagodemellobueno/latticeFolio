@@ -7,7 +7,7 @@
   <meta http-equiv="content-script-type" content="text/javascript" />
 	<!-- viewport for mobile browsers -->
 
-  <title>J. Cacciola Gallery</title>
+  <title>J. Cacciola Gallery | <?=latticeview::initialObject()->title;?></title>
 <!-- typkit -->
 <script type="text/javascript" src="http://use.typekit.com/llo3ajs.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -17,7 +17,7 @@
 
 </head>
 
-<body>
+<body id="<?=latticeview::initialObject()->slug;?>" >
 
 	<div id="wrapper">
 

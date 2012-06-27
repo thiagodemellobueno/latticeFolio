@@ -26,14 +26,7 @@
 					<ul class="Artists">
 						<?foreach($artists as $artist):?>
 							<li>
-								<?$works=$artist->latticeChildrenQuery()->objectTypeFilter('works')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
-								<?$work = $works->latticeChildrenQuery()->objectTypeFilter('work')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
-								<?php if (is_object($work) && is_object($work->image)):?>
-								<a data-previewsrc="<?php echo $work->image->previewThumb->fullpath;?>" href="<?php latticeurl::site($artist->slug);?>" class="<?php echo latticeview::withinSubtree($artist->slug) ? "active" : "";?>" >
-							    <?=$artist->title;?>
-								</a>
-								<?php endif?>
-								
+								<a href="<?=latticeurl::site($artist->slug);?>" class="<?php echo latticeview::withinSubtree($artist->slug) ? "active" : "";?>" ><?=$artist->title;?></a>
 							</li>
 						<?endforeach;?>
 					</ul>
@@ -50,9 +43,7 @@
 						<?foreach($wrArtists as $artist):?>
 
 							<li>
-								<?$works=$artist->latticeChildrenQuery()->objectTypeFilter('works')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
-								<?$work = $works->latticeChildrenQuery()->objectTypeFilter('work')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
-								<a data-previewsrc="<?=$work->image->previewThumb->fullpath;?>" href="<?=latticeurl::site($artist->slug);?>" class="<?echo latticeview::withinSubtree($artist->slug) ? "active" : "";?>" ><?=$artist->title;?></a>
+								<a href="<?=latticeurl::site($artist->slug);?>" class="<?echo latticeview::withinSubtree($artist->slug) ? "active" : "";?>" ><?=$artist->title;?></a>
 							</li>
 
 						<?endforeach;?>

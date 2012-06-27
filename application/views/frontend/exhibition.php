@@ -28,7 +28,7 @@
 	</div>
 	<div class="grid_5 push_1">
 		<?if(is_object($content['main']['PDF'])):?>
-		<h3><a class="pdflink" href="<?=$content['main']['PDF']->fullpath;?>">Press Release</a></h3>
+		<h3><a class="pdflink" href="<?=$content['main']['PDF']->fullpath;?>" target="_blank">Press Release</a></h3>
 		<?endif;?>
 	</div>
 </div>

@@ -55,7 +55,7 @@
 	<div class="grid_5 push_1">
 
 		<?if( $content['main']['bioPDF']->filename && is_object($content['main']['bioPDF']) ):?>
-			<h3><a class="pdflink" href="<?=$content['main']['bioPDF']->fullpath;?>"><?=$content['main']['bioPDF']->filename;?>Download Bio</a></h3>
+			<h3><a class="pdflink" href="<?=$content['main']['bioPDF']->fullpath;?>" target="_blank">Bio PDF</a></h3>
 		<?endif;?>
 
 		<?if(count( $content['main']['links'] ) ):?>

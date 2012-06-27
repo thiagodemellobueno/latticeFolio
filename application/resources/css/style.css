@@ -185,13 +185,13 @@ ul#nav li:hover .subnav{ display: block; }
   padding:0px 0px 3em 0;
 }
 
-#wrapper{
+/*#wrapper{
   padding-bottom:8em;
 }
-
-#cvListing{
+*/
+/*#cvListing{
   margin-bottom:12em;
-}
+}*/
 
 .workHeader{width:560px;
   float:left;
@@ -240,11 +240,11 @@ p.work_meta	{
 	clear: both;
 	background: url( ../images/icon_pdf.gif ) no-repeat;
 	padding: 0 0 0 2em;
-	margin: .45em 0 0 0;
+	margin: .45em 0 0 -.75em;
 }
 
 .workImage{ clear: both; display: block; }
-#footer { width: 100%; position:fixed; bottom:0; padding-top:1em; background: #fff; }
+#footer { margin: 3em 0 0 0; width: 100%; padding-top:1em; background: #fff; }
 #footer ul { margin:0; padding:0; list-style:none;}
 #footer ul li { margin:0; padding:0;}
 
@@ -302,6 +302,14 @@ div.slideshowPrev {
     background: url(../images/previous_image.png) center center no-repeat;
 }
 
+.page-title{
+	position:relative;
+}
+.backarrow{
+	position: absolute;
+	left: -2em;
+	line-height: 2;
+}
 div.slideshowNext {
   	width:32px;
 		height: 100%;

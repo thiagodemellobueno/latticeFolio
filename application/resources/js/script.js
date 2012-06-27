@@ -30,23 +30,36 @@ lattice.util.getValueFromClassName = function( key, aClassName ){
 }
 
 jcacciola = {};
+
 jcacciola.Application = new Class({
+
 	slideshows: [],	
+
 	initialize: function(){
-		if( document.id("gallery") ) var slideshow = new jcacciola.Gallery( document.id("gallery") );
-		if( $('exhibitions' ) ) this.resizeExhibitions( $('exhibitions' ).getElements('li.exhibition') );
-		this.artistsNav = $('artistsNav');
-		// Mobile Platforms
-		this.artistsPreviewNav = this.artistsNav.getElement('.artistsPreview');
-		if( Browser.Platform.ios || Browser.Platform.android || Browser.Platform.webos ){
-			this.artistsNav.getElement('a').addEvent( 'mouseover', function( e ){ e.preventDefault() }.bindWithEvent( this ) );
-			this.artistsNav.getElement('a').addEvent( 'click', this.showSubmenu.bindWithEvent( this, this.artistsNav ) );
-		}else{
-			this.artistsNav.getElements(".subnav a").each( function( alink ){
-				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ this.artistsPreviewNav, alink.get( "data-previewsrc" ) ] ) );
-				this.artistsNav.addEvent( 'mouseleave', this.hidePreview.bindWithEvent( this, this.artistsPreviewNav ) );
-			}, this );
+
+		console.log( window.getSize().y, window.innerHeight, $(document.body).getSize().y, $('footer').getCoordinates().top, $('footer').getSize().y );
+
+		if( $('footer').getCoordinates().top + $('footer').getSize().y < window.getSize().y ){
+			$( 'footer' ).setStyles({
+				'position' : 'fixed',
+				'bottom' : 0
+			});
+			$( 'wrapper' ).setStyles({
+				'padding-bottom' : '8em'
+			});			
 		}
+		
+		
+		// Mobile Platforms
+		if( Browser.Platform.ios || Browser.Platform.android || Browser.Platform.webos ) this.isMobile = true;
+		if( this.isMobile ) this.artistsNav.getElement('a').addEvent( 'click', this.showSubmenu.bindWithEvent( this, this.artistsNav ) );
+		// Are we in a gallery view?
+		if( document.id("gallery") ) var slideshow = new jcacciola.Gallery( document.id("gallery") );
+		// Are we in exhibitions listing
+		if( $('exhibitions' ) ) this.resizeExhibitions( $('exhibitions' ).getElements('li.exhibition') );
+		
+		this.artistsNav = $('artistsNav');
+
 		if( $('representedArtists') ){
 			$('representedArtists').getElements("a").each( function( alink ){
 				alink.addEvent( 'mouseover', this.showPreview.bindWithEvent( this, [ $('artistListing').getElement('.preview'), alink.get( "data-previewsrc" ) ] ) );
@@ -60,7 +73,7 @@ jcacciola.Application = new Class({
 			}, this );			
 			$('worksAvailArtists').addEvent( 'mouseleave', this.hidePreview.bindWithEvent( this, $('artistListing').getElement('.preview') ) );
 		}
-		
+
 	},	
 	
 	showPreview: function( e, prevelement, src ){
@@ -73,23 +86,22 @@ jcacciola.Application = new Class({
 			prevelement.empty();
 			prevelement.grab( img );
 		}});
-
 	},
 	
 	hidePreview: function(e, prevelement ){
 		e.preventDefault();
 		prevelement.setStyle('visibility','hidden');
 	},
-	
+
 	showSubmenu: function( e ){
-		e.preventDefault();
+		if( !this.isMobile ) e.preventDefault();
 		this.artistsNav.addClass('active');
 		$(document.body).addEvent('click', this.hideSubmenu.bindWithEvent( this, this.artistsNav ) );
 	},
-	
+
 	hideSubmenu: function( e ){
 		if( !e.target || !$(e.target).getParents().contains( this.artistsNav ) ) { 
-		   this.artistsNav.removeClass('active'); //hide the menu! clicked outside!
+		   this.artistsNav.removeClass('active');
 	  }
 	},
 	
