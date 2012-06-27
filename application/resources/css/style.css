@@ -265,7 +265,7 @@ div.slideshow div.images{
 	position:relative;
 	bottom:0;
 	white-space: nowrap;
-	padding: 0 12em 0 0;
+	padding: 0 12em 0 .75em;
 }
 
 div.slideshow .galleryImage{

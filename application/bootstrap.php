@@ -118,15 +118,3 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
-
-// Route::set('defaultLatticeFrontend', '(<controller>)', array( 'controller'=>'', ) )->defaults(array(
-// 	'controller' => 'work',
-// 	'action' => 'index',
-// ));
-
-
-Route::set('defaultLatticeFrontend', '(<controller>)', array( 'controller'=>'', ) )->defaults(array(
-	'controller' => 'latticeviews',
-	'action' => 'getView',
-	'id'     => 'works',
-));

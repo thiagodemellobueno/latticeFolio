@@ -196,7 +196,7 @@ jcacciola.Gallery = new Class({
 					return;
 				}else{
 					this.imageContainer.setStyle( "width", width );
-					this.imageContainer.setStyle("paddingLeft", "12em");
+					// this.imageContainer.setStyle("paddingLeft", "12em");
 					this.imageContainer.setStyle("paddingRight", this.rightPadding );
 					this.imageContainer.setStyle("marginRight", "0" );
 					this.imageContainer.setStyle("marginLeft", "0" );
