@@ -30,8 +30,8 @@
 
 	<div class="grid_6">
 		<div class="shareLinks">
-			<a target="blank" rel="nofollow" href="http://twitter.com/home?status=<?=urlencode( $content['main']['slug'] );?>%20<?=urlencode(url::base('http'));?>exhibitions"  class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>"> <img src="<?=url::base();?>application/views/images/twitter.png" alt="twitter logo"/></a>
-			<a target="blank" rel="nofollow" href="http://www.facebook.com/sharer/sharer.php?u=<?=urlencode(url::base('http'));?>exhibitions"  class="<?echo latticeview::withinSubtree('artists') ? "exhibitions" : "";?>"><img src="<?=url::base();?>application/views/images/facebook.png" alt="facebook logo" /></a>
+			<a target="blank" rel="nofollow" href="http://twitter.com/home?status=<?=urlencode( $content['main']['slug'] );?>%20<?=urlencode(url::base('http'));?>exhibitions"  class="<?echo latticeview::withinSubtree('exhibitions') ? "active" : "";?>"> <img src="<?=url::base();?>application/resources/images/twitter.png" alt="twitter logo"/></a>
+			<a target="blank" rel="nofollow" href="http://www.facebook.com/sharer/sharer.php?u=<?=urlencode(url::base('http'));?>exhibitions"  class="<?echo latticeview::withinSubtree('artists') ? "exhibitions" : "";?>"><img src="<?=url::base();?>application/resources/images/facebook.png" alt="facebook logo" /></a>
 		</div>
 
 		<p class="bio"> <?=$content['main']['bio'];?></p>

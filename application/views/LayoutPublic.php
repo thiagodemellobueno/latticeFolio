@@ -12,12 +12,6 @@
 <script type="text/javascript" src="http://use.typekit.com/llo3ajs.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-  <script type="text/javascript" src="application/views/js/mootools.js"></script>
-  <script type="text/javascript" src="application/views/js/script.js"></script>
-	<link rel="stylesheet" href="application/views/css/style.css" />
-  <link rel="stylesheet" href="application/views/css/text.css" />
-  <link rel="stylesheet" href="application/views/css/960.css" />
-
   <?=$stylesheet;?>
 	<?=$javascript;?>
 
