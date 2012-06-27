@@ -10,8 +10,8 @@
           //sorting on slug, which seems iffy.
           $parent = $artist->getLatticeParent();
           $collection = Graph::object()->latticeChildrenFilter($parent->id, 'lattice')->publishedFilter();
-          $next_id =  $collection->next('slug',$content["main"]["id"]);
-          $prev_id =  $collection->prev('slug',$content["main"]["id"]);
+          $next_id =  $collection->next('sortorder',$content["main"]["id"],'lattice');
+          $prev_id =  $collection->prev('sortorder',$content["main"]["id"],'lattice');
          
           //now get the slugs from the id's (load the objects)
           $next = Graph::object($next_id);
