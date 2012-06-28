@@ -37,8 +37,6 @@ jcacciola.Application = new Class({
 
 	initialize: function(){
 
-		console.log( window.getSize().y, window.innerHeight, $(document.body).getSize().y, $('footer').getCoordinates().top, $('footer').getSize().y );
-
 		if( $('footer').getCoordinates().top + $('footer').getSize().y < window.getSize().y ){
 			$( 'footer' ).setStyles({
 				'position' : 'fixed',
@@ -57,6 +55,7 @@ jcacciola.Application = new Class({
 		if( document.id("gallery") ) var slideshow = new jcacciola.Gallery( document.id("gallery") );
 		// Are we in exhibitions listing
 		if( $('exhibitions' ) ) this.resizeExhibitions( $('exhibitions' ).getElements('li.exhibition') );
+		if( $('newsItems') ) this.resizeNewsItems();
 		
 		this.artistsNav = $('artistsNav');
 
@@ -82,7 +81,6 @@ jcacciola.Application = new Class({
 		prevelement.setStyle('visibility','visible');
 		prevelement.spin();
 		this.imgAsset = new Asset.image( src, {  onload: function(img){ 
-			console.log( arguments );
 			prevelement.empty();
 			prevelement.grab( img );
 		}});
@@ -111,14 +109,10 @@ jcacciola.Application = new Class({
 		var targetHeight = 0;
 		this.row = [];
 		exhibitions.each( function( anExhibition, i ){
-			console.log( anExhibition, i, anExhibition.getSize().y, targetHeight, anExhibition.getSize().y > targetHeight );
 			var col = ( i%moduloCount );
 			if( anExhibition.getSize().y > targetHeight ) targetHeight = anExhibition.getCoordinates().height;
-			console.log( this.row, targetHeight );
 			this.row.include( anExhibition );
-			console.log( col, moduloCount-1, col == moduloCount-1 );
 			this.row.each( function( aColItem ){
-				console.log( "targetHeight", targetHeight );
 				aColItem.setStyle( 'height', targetHeight );
 			});
 			if( col == moduloCount - 1 ){
@@ -126,7 +120,45 @@ jcacciola.Application = new Class({
 				targetHeight = 0;
 			}
 	  }, this );
+	},
+	
+	resizeNewsItems: function(){
+		var container = $('newsItems');
+		// loop through each grouping, make a consistent size.
+		var lg = container.getElements( '.large' );
+		var md = container.getElements( '.medium' );
+		var sm = container.getElements( '.small' );
+		console.log( lg, md, sm );
+		var h = 0;
+		lg.each( function( item ){
+			itemH = item.getSize().y;
+			h = ( itemH > h )? itemH : h;
+		});
+		lg.each( function( item ){
+			item.setStyle( 'height', h );
+			console.log( 'lg', h );
+		});
+		var h = 0;
+		md.each( function( item ){
+			itemH = item.getSize().y;
+			h = ( itemH > h )? itemH : h;
+		});
+		md.each( function( item ){
+			item.setStyle( 'height', h );
+			console.log( 'md', h );
+		});
+
+		var h = 0;
+		sm.each( function( item ){
+			itemH = item.getSize().y;
+			h = ( itemH > h )? itemH : h;
+		});
+		sm.each( function( item ){
+			item.setStyle( 'height', h );
+			console.log( 'sm', h );
+		});	
 	}
+	
 });
 
 jcacciola.Gallery = new Class({
@@ -184,8 +216,6 @@ jcacciola.Gallery = new Class({
 					width += anImage.getSize().x + parseInt( anImage.getStyle( "marginLeft" ) );
 				}, this );
 				this.scroll = new Fx.Scroll( this.pane );
-				// console.log( winx + " is greater than? ", width + parseInt( this.imageContainer.getComputedStyle('paddingLeft') ) + parseInt( this.imageContainer.getComputedStyle('paddingRight') ) );
-				// console.log( winx + " is greater than? ", (winx - 960) * .5 + 960 );
 				this.pane.setStyle( 'width', winx );
 
 				// Mobile Platforms
