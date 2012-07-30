@@ -13,7 +13,7 @@
 			<?foreach($content['main']['contacts'] as $contactPerson):?>
 				<li class="person museo">
 					<?=$contactPerson['name'];?><br/>
-					<?=$contactPerson['title'];?><br/>
+					<?=$contactPerson['contactPersonTitle'];?><br/>
 					<?=$contactPerson['email'];?>
 				</li>
 			<?endforeach;?>

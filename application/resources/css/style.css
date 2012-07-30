@@ -312,31 +312,48 @@ div.slideshow .galleryImage:first-child{
     margin: 0 0 0 0;
 }
 
+
+#workPane{
+	position: relative;
+}
+
+div.slideshowPrev,
+div.slideshowNext{
+	width:32px;
+	height: 64px;
+	z-index: 10000;
+	position:absolute;
+}
+
+#workPane div.slideshowPrev,
+#workPane div.slideshowNext{
+	top: 40%;
+}
+
+#gallery div.slideshowPrev,
+#gallery div.slideshowNext{
+	height: 100%;
+}
+
 div.slideshowPrev {
-		width:32px;
-    height: 100%;
-    position:absolute;
     left:0; 
-    z-index: 10000;
     background: url(../images/previous_image.png) center center no-repeat;
+}
+div.slideshowNext {
+    right:0;
+	  background: url(../images/next_image.png) center center no-repeat;
 }
 
 .page-title{
 	position:relative;
 }
+
 .backarrow{
 	position: absolute;
 	left: -2em;
 	line-height: 2;
 }
-div.slideshowNext {
-  	width:32px;
-		height: 100%;
-  	z-index: 10000;
-  	position:absolute;
-    right:0;
-	  background: url(../images/next_image.png) center center no-repeat;
-}
+
 
 div.slideshowPrev a,
 div.slideshowNext a {

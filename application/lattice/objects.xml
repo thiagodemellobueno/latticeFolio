@@ -132,9 +132,10 @@
 
   <objectType name="cvListing" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
-      <list name="cvListItem" label="CV List Item" allowChildSort="true">
+      <text name="bodyCopy" label="Body Copy"/>
+      <!-- <list name="cvListItem" label="CV List Item" allowChildSort="true">
         <addableObject objectTypeName="cvItem" addText="Add a CV Item"/>
-      </list>
+      </list> -->
     </elements>
   </objectType>
 

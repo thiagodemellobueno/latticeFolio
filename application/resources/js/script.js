@@ -42,9 +42,9 @@ jcacciola.Application = new Class({
 				'position' : 'fixed',
 				'bottom' : 0
 			});
-			$( 'wrapper' ).setStyles({
-				'padding-bottom' : '8em'
-			});			
+			// $( 'wrapper' ).setStyles({
+			// 	'padding-bottom' : '8em'
+			// });			
 		}
 		
 		
@@ -128,7 +128,6 @@ jcacciola.Application = new Class({
 		var lg = container.getElements( '.large' );
 		var md = container.getElements( '.medium' );
 		var sm = container.getElements( '.small' );
-		console.log( lg, md, sm );
 		var h = 0;
 		lg.each( function( item ){
 			itemH = item.getSize().y;
@@ -136,7 +135,6 @@ jcacciola.Application = new Class({
 		});
 		lg.each( function( item ){
 			item.setStyle( 'height', h );
-			console.log( 'lg', h );
 		});
 		var h = 0;
 		md.each( function( item ){
@@ -145,7 +143,6 @@ jcacciola.Application = new Class({
 		});
 		md.each( function( item ){
 			item.setStyle( 'height', h );
-			console.log( 'md', h );
 		});
 
 		var h = 0;
@@ -155,7 +152,6 @@ jcacciola.Application = new Class({
 		});
 		sm.each( function( item ){
 			item.setStyle( 'height', h );
-			console.log( 'sm', h );
 		});	
 	}
 	
@@ -174,6 +170,7 @@ jcacciola.Gallery = new Class({
 	rightPadding: 24,
 	
 	initialize: function( anElement ){
+		
 		this.element = anElement;
 		this.imageContainer = anElement.getElement( ".images" );
 		this.pane = anElement.getElement('.pane');
@@ -183,29 +180,38 @@ jcacciola.Gallery = new Class({
 		this.prevLink.fade('hide');
 		this.nextLink.fade('hide');
 
+		window.addEvent( 'resize', this.resizeGallery.bind( this ) );
+		this.resizeGallery();
 
 		// Mobile Platforms
 		if( Browser.Platform.ios || Browser.Platform.android || Browser.Platform.webos ){
-			// this.swipe = new MooSwipe( this.pane, { 
-			// 	onSwipeLeft: this.previousImage.bindWithEvent( this ),
-			// 	onSwipeRight: this.nextImage.bindWithEvent( this )
-			// });
+
 			$('footer').setStyle('position', 'static');
 			window.addEvent( 'orientationchange', this.resizeGallery.bind( this ) );
-			// this.prevLink.setStyles( { "width":"45%", "height":"45%" } );
-			// this.nextLink.setStyles( { "width":"45%", "height":"45%" } );
-			this.prevLink.addEvent( "touchstart", this.startScroll.bindWithEvent( this, -1 ) );
-			this.nextLink.addEvent( "touchstart", this.startScroll.bindWithEvent( this, 1 ) );
-			this.prevLink.addEvent( "touchend", this.endScroll.bindWithEvent( this ) );
-			this.nextLink.addEvent( "touchend", this.endScroll.bindWithEvent( this ) );					
+
+			if( this.pane.getElement('div.image').getSize().x > window.getSize().x ){
+				this.prevLink.addEvent( "touchstart", this.startScroll.bindWithEvent( this, -1 ) );
+				this.nextLink.addEvent( "touchstart", this.startScroll.bindWithEvent( this, 1 ) );
+				this.prevLink.addEvent( "touchend", this.endScroll.bindWithEvent( this ) );
+				this.nextLink.addEvent( "touchend", this.endScroll.bindWithEvent( this ) );					
+			}
+			
 		}else{
-			this.prevLink.addEvent( "mousedown", this.startScroll.bindWithEvent( this, -1 ) );
-			this.nextLink.addEvent( "mousedown", this.startScroll.bindWithEvent( this, 1 ) );
-			this.prevLink.addEvent( "mouseup", this.endScroll.bindWithEvent( this ) );
-			this.nextLink.addEvent( "mouseup", this.endScroll.bindWithEvent( this ) );					
+
+			console.log( "!!!", this.pane.getSize().x, window.getSize().x, this.pane.getElement('div.images').getSize().x );
+
+			if( this.pane.getElement('div.images').getSize().x > window.getSize().x ){
+				this.prevLink.addEvent( "mousedown", this.startScroll.bindWithEvent( this, -1 ) );
+				this.nextLink.addEvent( "mousedown", this.startScroll.bindWithEvent( this, 1 ) );
+				this.prevLink.addEvent( "mouseup", this.endScroll.bindWithEvent( this ) );
+				this.nextLink.addEvent( "mouseup", this.endScroll.bindWithEvent( this ) );					
+			}else{
+				this.imageContainer.setStyle("marginRight", "auto" );
+				this.imageContainer.setStyle("marginLeft", "auto" );
+				this.prevLink.addClass('hidden');
+				this.nextLink.addClass('hidden');
+			}
 		}
-		window.addEvent( 'resize', this.resizeGallery.bind( this ) );
-		this.resizeGallery();
 	},
 	
 	resizeGallery:  function(){
@@ -270,6 +276,10 @@ jcacciola.Gallery = new Class({
 			if( this.nextLink.getStyle("opacity") == 1 ) this.nextLink.fade( 'out' );
 		} else if ( this.pane.getScroll().x == 0 ){
 				if( this.prevLink.getStyle("opacity") == 1 ) this.prevLink.fade( 'out' );
+				if( this.pane.getElement('div.images').getSize().x < window.getSize().x ){
+					this.nextLink.fade( 'out' );
+				}
+
 		}else{
 			this.nextLink.fade('in');
 			this.prevLink.fade('in');

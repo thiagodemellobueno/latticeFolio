@@ -12,10 +12,10 @@
 	$next_id =  $collection->next('sortorder',$content["main"]["id"],'lattice');
 	$prev_id =  $collection->prev('sortorder',$content["main"]["id"],'lattice');
 
+
 	//now get the slugs from the id's (load the objects)
 	$next = Graph::object($next_id);
 	$prev = Graph::object($prev_id);
-
 
 	//first, get the id for an 'artist' content type
 	$artist_type_id = ORM::Factory('objecttype')->where('objecttypename','=','artist')->find()->as_array('id');
@@ -29,18 +29,18 @@
       
 ?>
 
+<div id="workPane">
+	<?if (strlen($prev->title)>0):?>
+	<div class="slideshowPrev"><a title="<?=$prev->title;?>" href="/<?=$prev->slug?>">Prev</a></div>
+	<?endif;?>
 
-<?if (strlen($prev->title)>0):?>
-<div class="slideshowPrev"><a href="/<?=$prev->slug?>">Prev</a></div>
-<?endif;?>
-
-<?php if (strlen($next->title)>0):?>
-<div class="slideshowNext"><a href="<?=$next->slug?>">Next</a></div>
-<?endif;?>
-
+	<?php if (strlen($next->title)>0):?>
+	<div class="slideshowNext"><a title="<?=$next->title;?>" href="<?=$next->slug?>">Next</a></div>
+	<?endif;?>
 
 <div class="container_12">	
-			<img id="image" class="workImage" src="<?=latticeurl::site($content['main']['image']->workImageBig->fullpath);?>" width="<?=$content['main']['image']->workImageBig->width;?>" height="<?=$content['main']['image']->workImageBig->height;?>" alt="<?=$content['main']['title'];?> <?=$content['main']['media'];?> <?=$content['main']['dimensions'];?>" />
+	
+				<img id="image" class="workImage" src="<?=latticeurl::site($content['main']['image']->workImageBig->fullpath);?>" width="<?=$content['main']['image']->workImageBig->width;?>" height="<?=$content['main']['image']->workImageBig->height;?>" alt="<?=$content['main']['title'];?> <?=$content['main']['media'];?> <?=$content['main']['dimensions'];?>" />
 
 		
 		<h3 class="work-name page-title">
@@ -62,6 +62,8 @@
 			<a target="blank" rel="nofollow" href="http://twitter.com/home?status=<?=urlencode( $content['main']['slug'] );?>%20<?=urlencode(url::base('http'));?>exhibitions"> <img src="<?=url::base();?>application/resources/images/twitter.png"/></a>
 			<a target="blank" rel="nofollow" href="http://www.facebook.com/sharer.php?u=<?=urlencode(url::base('http').$content['main']['slug']);?>&t=<?=urlencode($content['main']['title']." ".$content['main']['media']." ".$content['main']['dimensions']);?>"><img src="<?=url::base();?>application/resources/images/facebook.png"/></a> 
 		</div>
+
+</div>
 
 </div>
 

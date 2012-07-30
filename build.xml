@@ -1,53 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="latticesite" default="pull">
+<project name="souledobjects" default="pull">
 
-  <target name="checkout">
-    <exec executable="git">
-      <arg value="submodule"/>
-      <arg value="init"/>
-    </exec>
-    <exec executable="git">
-      <arg value="submodule"/>
-      <arg value="update"/>
-    </exec>
-    <exec executable="git" dir="lattice">
-      <arg value="checkout"/>
-      <arg value="master"/>
-    </exec>
-    <ant target="setup"/>
-  </target>
+	<target name="prepareDeploy">
+		<echo message="Preparing Deployment"/>
+		<exec executable="rm">
+			<arg value="-R"/>
+			<arg value="-f"/>
+			<arg value="deploy"/>
+		</exec>
+		<exec executable="rsync">
+			<arg value="-r"/>
+			<arg value="--exclude-from=deploymentSettings/rsync.exclude"/>
+			<arg value="."/>
+			<arg value="deploy"/>
+		</exec>
+	</target>
+	
+	<target name="prepareDeploy">
+		<echo message="Preparing Deployment"/>
+		<exec executable="rm">
+			<arg value="-R"/>
+			<arg value="-f"/>
+			<arg value="deploy"/>
+		</exec>
+		<exec executable="rsync">
+			<arg value="-r"/>
+			<arg value="--exclude-from=deploymentSettings/rsync.blog.exclude"/>
+			<arg value="."/>
+			<arg value="deploy"/>
+		</exec>
+	</target>
 
-  <target name="setup">
-    <chmod dir="application/cache" perm="777"/>
-    <chmod dir="application/logs" perm="777"/>
-    <mkdir dir="application/media"/> 
-    <chmod dir="application/media" perm="777"/>
-    <mkdir dir="application/export"/> 
-    <chmod dir="application/export" perm="777"/>
-    <mkdir dir="upload"/> 
-    <chmod dir="upload" perm="777"/>
-  </target>
+	<target name="updateStagingSource">
+		<ant target="prepareDeploy"/>
+		<echo message="Updating Staging Source"/>
+		<copy file="deploymentSettings/db.staging.php" tofile="deploy/application/config/database.php" overwrite="true"/>
+		<copy file=".htaccess" tofile="deploy/.htaccess" overwrite="true"/>
+		<chmod file="deploy/.htaccess" perm="644"/>
+		<chmod file="application/cache" perm="777">
+			<arg value="-R"/>
+		</chmod>
+		<chmod file="application/media" perm="777">
+			<arg value="-R"/>
+		</chmod>
+		<chmod file="application/views/generated" perm="777">
+			<arg value="-R"/>
+		</chmod>
+		<echo message="Uploading Site"/>
+		<exec executable="rsync">
+			<arg value="-e"/>
+			<arg value="ssh"/>
+			<arg value="-av"/>
+			<arg value="./deploy/"/>
+			<arg value="jcacciola@cms.madeofpeople.org:domains/staging.jcacciolagallery.com/public_html"/>
+		</exec>
+		<echo message="End"/>
+	</target>
 
-  <target name="pull">
-    <exec executable="git">
-      <arg value="pull"/>
-    </exec>
-    <exec executable="git" dir="lattice">
-      <arg value="pull"/>
-    </exec>  
-  </target>
 
-  <target name="test">                                                                                                
-    <exec executable="phpunit">                                                                                       
-      <arg value="--configuration=application/tests/phpunit.xml"/>                                                    
-    </exec>                                                                                                           
-  </target>
+	<target name="updateProductionSource">
+		<ant target="prepareDeploy"/>
+		<echo message="Updating Staging Source"/>
+		<copy file="deploymentSettings/db.production.php" tofile="deploy/application/config/database.php" overwrite="true"/>
+		<copy file=".htaccess" tofile="deploy/.htaccess" overwrite="true"/>
+		<chmod file="deploy/.htaccess" perm="644"/>
+		<chmod file="application/cache" perm="777">
+			<arg value="-R"/>
+		</chmod>
+		<chmod file="application/media" perm="777">
+			<arg value="-R"/>
+		</chmod>
+		<chmod file="index.php" perm="755">
+			<arg value="-R"/>
+		</chmod>
+		<chmod file="application/views/generated" perm="777">
+			<arg value="-R"/>
+		</chmod>
+		<echo message="Uploading Site"/>
+		<exec executable="rsync">
+			<arg value="-e"/>
+			<arg value="ssh"/>
+			<arg value="-av"/>
+			<arg value="./deploy/"/>
+			<arg value="jcacciola@cms.madeofpeople.org:domains/jcacciolagallery.com/public_html"/>
+		</exec>
+		<echo message="End"/>
+	</target>
+	
+	<target name="updateBlog">
+		<ant target="prepareBlogDeploy"/>
+		<echo message="Uploading media from local"/>
+		<echo message="Uploading Site"/>
+		<exec executable="rsync">
+			<arg value="-e"/>
+			<arg value="ssh"/>
+			<arg value="-av"/>
+			<arg value="./application/media"/>
+			<arg value="jcacciola@cms.madeofpeople.org:domains/jcacciolagallery.com/public_html/blog"/>
+		</exec>
+		<echo message="End"/>
+	</target>
 
-  <target name="testlattice">                                                                                                
-    <exec executable="phpunit">                                                                                       
-      <arg value="--configuration=lattice/lattice/devtools/tests/phpunit.xml"/>                                                    
-    </exec>                                                                                                           
-  </target>
+	<target name="updateMediaFromLocal">
+		<ant target="prepareMediaDeploy"/>
+		<echo message="Uploading media from local"/>
+		<echo message="Uploading Site"/>
+		<exec executable="rsync">
+			<arg value="-e"/>
+			<arg value="ssh"/>
+			<arg value="-av"/>
+			<arg value="./application/media"/>
+			<arg value="jcacciola@cms.madeofpeople.org:domains/jcacciolagallery.com/public_html/application/media"/>
+		</exec>
+		<echo message="End"/>
+	</target>
+
 </project>
 

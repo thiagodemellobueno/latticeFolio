@@ -1,0 +1,16 @@
+*.git
+.git*
+.DS_Store
+deploy
+deploymentSettings
+blog
+application/cache/*
+application/media/*
+application/export/*
+application/logs/*
+application/classes/controller/testing.php
+lattice/lattice/devtools/*
+application/tests/*
+tools/*
+nbproject
+testindex.php

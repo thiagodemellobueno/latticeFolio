@@ -42,9 +42,7 @@
  			<div class="cvListing">
 				<h3><?=$cvListingItem['title'];?></h3>
 				<div>
-					<?foreach($cvListingItem['cvListItem'] as $cvListItemItem):?>
-					<p class="entry"> <?=$cvListItemItem['entry'];?></p>
-					<?endforeach;?>
+					<?=$cvListingItem['bodyCopy'];?>
 				</div>
  			</div>
 			<?endforeach;?>
