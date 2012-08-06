@@ -8,7 +8,7 @@
 
 			<li id="artistsNav" ><a href="<?=url::base();?>artists"  class="<?echo latticeview::withinSubtree('artists') ? "active" : "";?>" >Artists</a>
 
-
+<?/*
 				<div class="subnav">
 					<div class="artistsPreview"></div>
 					<ul>
@@ -55,7 +55,7 @@
 					</li>
 
 				</ul>
-
+*/?>
 			</li>
 
 			<li class="hidden"><a href="<?=url::base();?>news" class="<?echo latticeview::withinSubtree('News') ? "active" : "";?>" >News</a></li>
