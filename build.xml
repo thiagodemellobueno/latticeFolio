@@ -17,22 +17,7 @@
 		</exec>
 	</target>
 	
-	<target name="prepareDeploy">
-		<echo message="Preparing Deployment"/>
-		<exec executable="rm">
-			<arg value="-R"/>
-			<arg value="-f"/>
-			<arg value="deploy"/>
-		</exec>
-		<exec executable="rsync">
-			<arg value="-r"/>
-			<arg value="--exclude-from=deploymentSettings/rsync.blog.exclude"/>
-			<arg value="."/>
-			<arg value="deploy"/>
-		</exec>
-	</target>
-
-	<target name="updateStagingSource">
+	<target name="deployStaging">
 		<ant target="prepareDeploy"/>
 		<echo message="Updating Staging Source"/>
 		<copy file="deploymentSettings/db.staging.php" tofile="deploy/application/config/database.php" overwrite="true"/>
@@ -59,7 +44,7 @@
 	</target>
 
 
-	<target name="updateProductionSource">
+	<target name="deployProduction">
 		<ant target="prepareDeploy"/>
 		<echo message="Updating Staging Source"/>
 		<copy file="deploymentSettings/db.production.php" tofile="deploy/application/config/database.php" overwrite="true"/>
