@@ -9,7 +9,8 @@
 		<div id="representedArtists" class="grid_2 alpha" >
 			<h3>Artists</h3>
 			<?foreach($content['representedArtists'] as $representedArtistsItem):?>
-				<?$works=Graph::object($representedArtistsItem['slug'])->latticeChildrenQuery()->objectTypeFilter('works')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
+
+	<?$works=Graph::object($representedArtistsItem['slug'])->latticeChildrenQuery()->objectTypeFilter('works')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
 				<?$work = $works->latticeChildrenQuery()->objectTypeFilter('work')->publishedFilter()->order_by('objectrelationships.sortorder')->find();?>
 			<a data-previewsrc="<?=$work->image->previewThumb->fullpath;?>" href="<?=url::base('http').$representedArtistsItem['slug'];?>"><?=$representedArtistsItem['title'];?></a><br/>
 			<?endforeach;?>
