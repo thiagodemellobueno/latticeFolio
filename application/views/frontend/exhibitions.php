@@ -23,7 +23,7 @@
 			<?endif;?>
 			<h3 class="title"><?=$olderExhibitionsItem['title'];?></h3>
 			<h4 class="dates"><?=date( "F j, Y", strtotime( $olderExhibitionsItem['date'] ) );?></h4>
-			<p class="blurb"> <?=$olderExhibitionsItem['blurb'];?></p>
+			<p class="blurb"> <?=($olderExhibitionsItem['blurb'])? $olderExhibitionsItem['blurb'] : "&nbsp;";?></p>
 		</div>
 	<?endforeach;?>
 	</div>
