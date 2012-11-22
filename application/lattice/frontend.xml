@@ -24,6 +24,10 @@
     <includeData from="parent" label="newsItem" objectTypeFilter="newsItem"/>
   </view>
 
+  <view name="fairs">
+    <includeData from="parent" label="fairItem" objectTypeFilter="fairItem"/>
+  </view>
+
   <view name="press">
     <includeData from="parent" label="pressItem" objectTypeFilter="pressItem"/>
   </view>

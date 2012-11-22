@@ -170,6 +170,10 @@
     <addableObject objectTypeName="newsItem" addText="Add Some News"/>
   </objectType>
 
+  <objectType name="fairs" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
+    <addableObject objectTypeName="newsItem" addText="Add an Item"/>
+  </objectType>
+
   <objectType name="newsItem" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
       <date name="date" label="Date"/>

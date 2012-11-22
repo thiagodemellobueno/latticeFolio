@@ -1,4 +1,5 @@
 <div id="footer">
+
 	<div class="container_12 museo">
 		<div class="grid_3 alpha">
 			<ul id="contact">
@@ -20,11 +21,20 @@
 		</div>
 		<div class="grid_3 omega">
 			<ul id="social">
-				<li><a href="http://www.facebook.com/pages/JCacciola-Gallery/132999769923">like on facebook</a></li>
-				<li><a href="">our twitter</a></li>
+				<li>
+					<a target="_blank" rel="nofollow" href="http://www.facebook.com/pages/JCacciola-Gallery/132999769923">
+						<img src="<?=url::base();?>application/resources/images/facebook.png" alt="facebook logo" />
+					</a>
+				</li>
+				<li>
+					<a target="_blank" href="http://twitter.com/cacciolagallery">
+						<img src="<?=url::base();?>application/resources/images/twitter.png" alt="twitter logo"/>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</div>
+
 </div>
 
 <script type="text/javascript">
