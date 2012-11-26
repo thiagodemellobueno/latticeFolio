@@ -171,7 +171,7 @@
   </objectType>
 
   <objectType name="fairs" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <addableObject objectTypeName="newsItem" addText="Add an Item"/>
+    <addableObject objectTypeName="newsItem" addText="Add an Fair"/>
   </objectType>
 
   <objectType name="newsItem" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">

@@ -6,14 +6,13 @@ RewriteEngine On
 # RewriteBase /
 
 # Protect hidden files from being viewed
-<Files .*>
-	Order Deny,Allow
-	Deny From All
-</Files>
+#<Files .*>
+# Order Deny,Allow
+# Deny From All
+#</Files>
 
 RewriteRule ^application/media/* - [PT,L]
-
-RewriteRule ^(crossdomain.xml|index.php|robots.txt|favicon.ico) - [PT,L]
+RewriteRule ^application/views/fonts/* - [PT,L]
 
 # Allow css and js to be displayed directly
 RewriteRule ^(.*)css$ - [PT,L]
@@ -25,6 +24,9 @@ RewriteRule ^(.*)swf$ - [PT,L]
 RewriteRule ^(.*)flv$ - [PT,L]
 RewriteRule ^(.*)f4v$ - [PT,L]
 RewriteRule ^(.*)pdf$ - [PT,L]
+RewriteRule ^(.*)zip$ - [PT,L]
+
+RewriteRule ^(crossdomain.xml|index.php|application/resources/fonts|media|woff|svg|eot|ttf|robots.txt|favicon.ico) - [PT,L]
 
 # Protect application and system files from being viewed
 RewriteRule ^(?:application|modules|system)\b.* index.php/$0 [L]

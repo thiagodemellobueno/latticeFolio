@@ -150,20 +150,24 @@ ul#nav .subnav ul ul{
 	box-shadow: 1px 1px 3px #dedede;
 }
 
+.fairItem,
 .newsItem{
 	border-bottom: 1px #aaa solid;
 	margin-bottom: 2.5em;
 }
 
+.fairItem div.img,
 .newsItem div.img{
 	overflow: hidden;
 	margin-bottom: .5em;
 }
 
+.fairItem.large div.img
 .newsItem.large div.img{
 	height: 344px;
 }
 
+.fairItem.medium div.img,
 .newsItem.medium div.img{
 	height: 256px;
 }
