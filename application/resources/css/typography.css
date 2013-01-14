@@ -1,0 +1,97 @@
+@font-face {
+  font-family: PTSans;
+  src:  url("application/resources/fonts/ptsans/PTS55F-webfont.eot");
+  src:  url("application/resources/fonts/ptsans/PTS55F-webfont.eot?#iefix") format("eot"),
+        url("application/resources/fonts/ptsans/PTS55F-webfont.ttf") format("truetype"),
+        url("application/resources/fonts/ptsans/PTS55F-webfont.woff") format("woff"),
+        url("application/resources/fonts/ptsans/PTS55F-webfont.svg#ptsans") format("svg");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: PTSans;
+  src:  url("application/resources/fonts/ptsans/PTS75F-webfont.eot");
+  src:  url("application/resources/fonts/ptsans/PTS75F-webfont.eot?#iefix") format("embedded-opentype"),
+        url("application/resources/fonts/ptsans/PTS75F-webfont.ttf") format("truetype"),
+        url("application/resources/fonts/ptsans/PTS75F-webfont.woff") format("woff"),
+        url("application/resources/fonts/ptsans/PTS75F-webfont.svg#ptsansBold") format("svg");
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: PTSans;
+  src:  url("application/resources/fonts/ptsans/PTS56F-webfont.eot");
+  src:  url("application/resources/fonts/ptsans/PTS56F-webfont.eot?#iefix") format("embedded-opentype"),
+        url("application/resources/fonts/ptsans/PTS56F-webfont.ttf") format("truetype"),
+        url("application/resources/fonts/ptsans/PTS56F-webfont.woff") format("woff"),
+        url("application/resources/fonts/ptsans/PTS56F-webfont.svg#ptsansItalic") format("svg");
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: PTSans;
+  src:  url("application/resources/fonts/ptsans/PTS76F-webfont.eot");
+  src:  url("application/resources/fonts/ptsans/PTS76F-webfont.eot?#iefix") format("embedded-opentype"),
+        url("application/resources/fonts/ptsans/PTS76F-webfont.ttf") format("truetype"),
+        url("application/resources/fonts/ptsans/PTS76F-webfont.woff") format("woff"),
+        url("application/resources/fonts/ptsans/PTS76F-webfont.svg#ptsansBoldItalic") format("svg");
+  font-style: italic;
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  color: #222;
+  margin-top: 1em;
+  margin-bottom: .5em;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+}
+
+h2 { font-size: 2em; }
+
+h3 { font-size: 1.5em; }
+
+h4{ font-size: 1.25em; }
+
+h5{
+  font-size: .75em;
+  letter-spacing: 1px;
+}
+
+body {
+  font-family: PTSans, helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+i, em{
+  font-style: italic;
+}
+  
+b, strong{
+  font-weight: 700;
+}
+
+nav, footer .menu{ 
+
+}
+
+.site-name{ margin: .5em 0 0 0; }
+
+nav {  font-size: 1.575em; }
+
+article h2 {
+  margin: 1.25em 0 .5em;
+}
+
+article p {
+  margin-bottom: 1em;
+}
