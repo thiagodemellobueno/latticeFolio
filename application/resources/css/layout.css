@@ -1,0 +1,38 @@
+
+/*
+-------------------------------------------------------------
+Responsive grid breakpoints for adaptive/responsive layouts 
+-------------------------------------------------------------
+*/
+
+
+#wrapper { min-width: 480px; }
+
+
+@media all and ( max-width: 580px ){
+
+}
+
+@media all and ( max-width: 650px ){
+
+}
+
+@media all and ( min-width: 581px ) and ( max-width: 844px ){
+
+}
+
+@media all and ( min-width: 845px ) and ( max-width: 959px ){
+
+}
+
+@media all and ( min-width: 960px ) {
+
+
+}
+
+  
+/*
+-----------------------------------
+ Global stuff below
+-----------------------------------
+*/
