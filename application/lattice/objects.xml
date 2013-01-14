@@ -5,233 +5,175 @@
 
   <objectTypes>
 
-    <objectType name="homePage" contentType="category" allowChildSort="false" allowDelete="false" allowTogglePublish="false">
-     <elements>
-      <text name="header" label="Title"/>
-      <text name="subtitle" label="Subtitle"/>
-      <text name="blurb" label="Blurb"/>
-      <text name="link" label="Link"/>
-      <list name="homeGallery" label="Home Image Gallery" allowChildSort="true">
-        <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
-      </list>
+  <objectType name="homepage" allowChildSort="true">
+    <addableObject objectTypeName="category"  addText="Add a Category"/>
+  </objectType>
 
-      <text name="upcomingTitle" label="Upcoming Title"/>
-      <text name="upcomingBlurb" label="Upcoming Blurb"/>
-      <text name="upcomingLink" label="Upcoming Link"/>
-      <image name="upcomingImage" label="Upcoming Image">
-        <resize name="frontend" width="200" height="180" forceDimension="width" crop="true" /> 
-        <ext>jpg</ext>
-      </image>
+  <objectType name="category" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
+    <elements>
+
+      <pagemeta name='seo' label='Page Metadata (SEO/Sharing)' />
+
+      <text name="blurb" label="Blurb"/>
+
+      <associator name="homepageGallery" label="Gallery images tagged 'featured' " lattice="homepageGallery" poolLabel="Available Images">
+        <filter objectTypeName="galleryImage" tagged='featured'/>
+      </associator>
+
+      <associator name="homepageEvents" label="Events tagged 'featured'" lattice="homepageEvents" poolLabel="Available Events" associatorType="checkboxes" >
+        <filter objectTypeName="event" tagged='featured'/>
+      </associator>
 
     </elements>
   </objectType>
 
-  <objectType name="imageGallery" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
-    <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
+
+  <objectType name="homepage" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
+    <elements>
+
+      <pagemeta name='seo' label='Page Metadata (SEO/Sharing)' />
+
+      <text name="blurb" label="Blurb"/>
+
+      <associator name="homepageGallery" label="Gallery images tagged 'featured' " lattice="homepageGallery" poolLabel="Available Images">
+        <filter objectTypeName="galleryImage" tagged='featured'/>
+      </associator>
+
+      <associator name="homepageEvents" label="Events tagged 'featured'" lattice="homepageEvents" poolLabel="Available Events" associatorType="checkboxes" >
+        <filter objectTypeName="event" tagged='featured'/>
+      </associator>
+
+    </elements>
+  </objectType>
+
+  <objectType name="imagePool" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
+    <elements>
+      <list name="gallery" label="items" >
+        <addableObject objectTypeName="galleryImage" addText="Add an Image" />
+      </list>
+    </elements>
   </objectType>
 
   <objectType name="galleryImage" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
-      <image name="image" label="Image">
-        <resize name="ui-thumb" width="220" height="220" forceDimension="width" />
-        <resize name="exhibitionThumb" width="540" height="360" forceDimension="height" />
+      <tags label="tags"/>
+      <image name="image" label="Image (png, jpg, tiff)">
+        <resize name="thumb" width="64" height="64" crop="true" />
+        <resize name="uithumb" width="248" height="160" forceDimension="width" />
+        <resize name="exhibitionThumb" width="960" height="360" forceDimension="width" />
         <resize name="mediumlisting" width="300" height="150" forceDimension="width" crop="false" aspectFollowsOrientation="false" />
-        <resize name="smalllisting" width="220" height="150" forceDimension="width" />
+        <ext>png</ext>
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
       </image>
-      <text name="header" label="title"/>
-      <text name="description" label="desription"/>
+      <link name="link" label="Links to"/>
+      <text name="imageTitle" label="Title"/>
+      <text name="blurb" label="Desription"/>
     </elements>
   </objectType>
 
-  <objectType name="exhibitions" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <addableObject objectTypeName="exhibition" addText="Add an Exhibition"/>
-  </objectType>
 
-  <objectType name="olderExhibitions" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <addableObject objectTypeName="archivedExhibition" addText="add an Archived Exhibition"/>
-  </objectType>
-   
-    <objectType name="archivedExhibition" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
-
+  <!-- a standard article -->
+  <objectType name="article" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
-      <date name="date" label="Date"/>
-      <text name="blurb" label="Blurb"/>
-      <image name="image" label="Image">
-        <resize name="archiveImage" width="200" height="180" forceDimension="width" crop="true" /> 
-        <ext>jpg</ext>
-      </image>
-      <file name="PDF" label="PDF">
-        <ext>PDF</ext>
-      </file>
+
+      <pagemeta name='seo' label='Page Metadata (SEO/Sharing)' />
+
+      <tags name="tags" label="tags" />
+      <text name="introParagraph" tag='h4' label='Intro Paragraph' />
+      <text name="bodyCopy" label="Body Copy" />
     </elements>
-  </objectType>
-
-
-  <objectType name="exhibition" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
-    <elements>
-      <image name="image" label="Listing Image">
-      	<resize name="mediumlisting" width="300" height="150" forceDimension="width" crop="false" />
-      	<resize name="smalllisting" width="220" height="150" forceDimension="width" />
-        <ext>jpg</ext>
-  		</image>
-      <date name="startDate" label="StartDate"/>
-      <date name="endDate" label="End Date"/>
-      <text name="subtitle" label="Subtitle"/>
-      <text name="blurb" label="Blurb"/>
-      <text name="bodyCopy" label="Body Copy"/>
-      <file name="PDF" label="PDF">
-        <ext>PDF</ext>
-      </file>
-      <list name="exhibitionGallery" label="Exhibition Gallery" allowChildSort="true">
-        <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
-      </list>
-    </elements>
-  </objectType>
-
-  <objectType name="artists" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
     <components>
-      <component objectTypeName="representedArtists" label="Represented Artists"/>
-      <component objectTypeName="worksAvailableArtists" label="Works Available Artists"/>
+      <component objectTypeName="articleGallery" label="Article Gallery"/>
+      <component objectTypeName="resources" label="Resources"/>
     </components>
   </objectType>
 
-  <objectType name="representedArtists" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
-    <addableObject objectTypeName="artist" addText="Add an Artist"/>
-  </objectType>
+  <!-- Article Gallery -->
+  <objectType name="articleGallery" allowTogglePublish="false" allowDelete="false">
 
-  <objectType name="worksAvailableArtists" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
-    <addableObject objectTypeName="artist" addText="Add an Artist"/>
-  </objectType>
-
-  <objectType name="artist" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
     <elements>
-      <text name="name" label="name"/>
-      <text name="bio" label="Bio"/>
-      <file name="bioPDF" label="Bio PDF">
-        <ext>PDF</ext>
+      <list name="galleryImages" label="Gallery Images">
+        <addableObject objectTypeName="galleryImage" addText="Add an Image"/>
+      </list>
+    </elements>
+
+  </objectType>
+
+  <!-- Resources Listing -->
+  <objectType name="resources" allowTogglePublish="false" allowDelete="false">
+
+    <elements>
+      <list name="resource-list" label="Resources">
+        <addableObject objectTypeName="addableFile" addText="Add a File"/>
+        <addableObject objectTypeName="addableLink" addText="Add a Link"/>
+      </list>
+    </elements>
+
+  </objectType>
+
+  <!-- File -->
+  <objectType name="addableFile">
+
+    <elements>
+      <tags name="tags" label="tags" />
+      <text name="label" label="Label" />
+      <text name="description" label="Description"/>
+      <file name="file" label="File (doc,pdf,zip)">
+        <ext>doc</ext>
+        <ext>pdf</ext>
+        <ext>zip</ext>
       </file>
-      <list name="links" label="links" allowChildSort="true">
-        <addableObject objectTypeName="artistLink" addText="Add a Link"/>
+    </elements>
+
+  </objectType>
+
+  <!-- Link -->
+  <objectType name="addableLink">
+
+    <elements>
+      <link name="link" label="Link"/>
+    </elements>
+
+  </objectType>
+
+  <!-- Events -->
+  <objectType name="events"  allowChildSort="true" allowDelete="false" allowTogglePublish="false">
+
+    <elements>
+      <list name="eventsList" label="items" >
+        <addableObject objectTypeName="event" addText="Add an Event" />
       </list>
     </elements>
-		<addableObject objectTypeName="cvListing" addText="Add a CV Listing"/> 
-		<components>
-      <component objectTypeName="works" label="Works"/>			
-		</components>
-  </objectType>
-	
-  <objectType name="artistLink" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <elements>
-      <text name="link" label="Link"/>
-      <text name="linkLabel" label="Link Label"/>
-    </elements>
+
   </objectType>
 
-  <objectType name="cvListing" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
-    <elements>
-      <text name="bodyCopy" label="Body Copy"/>
-      <!-- <list name="cvListItem" label="CV List Item" allowChildSort="true">
-        <addableObject objectTypeName="cvItem" addText="Add a CV Item"/>
-      </list> -->
-    </elements>
-  </objectType>
+  <objectType name="event">
 
-  <objectType name="cvItem" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
     <elements>
-      <text name="entry" label="entry"/>
-    </elements>
-  </objectType>
-
-  <objectType name="works" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-  	<addableObject objectTypeName="work" addText="Add a Piece"/>
-  </objectType>
-
-  <objectType name="work" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
-    <elements>
-      <text name="media" label="Media"/>
-      <text name="dimensions" label="Dimensions"/>
-      <checkbox name="privatecollection" label="Is part of a private collection?"/>
-      <!-- <checkbox name="shareLinks" label="Display Share Links"/> -->
-      <image name="image" label="Image">
-        <resize name="workImage" width="619" height="360" forceDimension="height" />
-        <resize name="workImageBig" width="780" height="500" forceDimension="height" />
-        <resize name="previewThumb" width="250" height="200" forceDimension="width" />
+        <tags label="tags"/>
+        <image name="image" label="Image (png, jpg, tiff)">
+        <resize name="thumb" width="64" height="64" crop="true" />
+        <resize name="uithumb" width="248" height="160" forceDimension="width" />
+        <resize name="exhibitionThumb" width="960" height="360" forceDimension="width" />
+        <resize name="mediumlisting" width="300" height="150" forceDimension="width" crop="false" aspectFollowsOrientation="false" />
+        <ext>png</ext>
         <ext>jpg</ext>
         <ext>tiff</ext>
         <ext>tif</ext>
       </image>
-    </elements>
-  </objectType>
-
-  <objectType name="news" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <addableObject objectTypeName="newsItem" addText="Add Some News"/>
-  </objectType>
-
-  <objectType name="fairs" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <addableObject objectTypeName="newsItem" addText="Add an Fair"/>
-  </objectType>
-
-  <objectType name="newsItem" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
-    <elements>
+      <text name="eventTitle" label="Event Title" tag="h4" />
+      <link name="link" label="Links to"/>
+      <text name="imageTitle" label="Title"/>
+      <text name="imageDescription" label="Image description"/>
+      <text name="description" label="Description" isMultiline="true"/>
       <date name="date" label="Date"/>
-      <text name="blurb" label="Blurb"/>
-      <image name="image" label="Image">
-        <resize name="small" width="220" height="147" forceDimension="width" />
-        <resize name="med" width="300" height="150" forceDimension="width" />
-        <resize name="large" width="460" height="460" forceDimension="width" />
-        <ext>jpg</ext>
-        <ext>tiff</ext>
-        <ext>tif</ext>
-      </image>
+      <link name="link" label="Link"/>
     </elements>
+
   </objectType>
 
-  <objectType name="press" contentType="category" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <addableObject objectTypeName="pressItem" addText="Add Some Press"/>
-  </objectType>
-
-  <objectType name="pressItem" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="false">
-    <elements>
-      <date name="date" label="Date"/>
-      <text name="blurb" label="Blurb"/>
-      <image name="image" label="Image">
-        <resize name="pressImage" width="220" height="147" forceDimension="width" />
-        <ext>jpg</ext>
-        <ext>tiff</ext>
-        <ext>tif</ext>
-      </image>
-    </elements>
-  </objectType>
-
-  <objectType name="about" contentType="document" allowChildSort="true" allowDelete="false" allowTogglePublish="false">
-    <elements>
-      <image name="image" label="Image">
-        <resize name="aboutImage" width="540" height="360" crop="true" />
-        <ext>jpg</ext>
-        <ext>tiff</ext>
-        <ext>tif</ext>
-      </image>
-      <text name="imageDescription" label="Image Description"/>
-      <text name="intro" label="Intro Paragraph"/>
-      <text name="blurb" label="Blurb"/>
-      <list name="contacts" label="Contacts" allowChildSort="true">
-        <addableObject objectTypeName="contactPerson" addText="Add a Contact"/>
-      </list>
-    </elements>
-  </objectType>
-
-  <objectType name="contactPerson" contentType="document" allowChildSort="true" allowDelete="true" allowTogglePublish="true">
-    <elements>
-      <text name="name" label="Name"/>
-      <text name="contactPersonTitle" label="Title"/>
-      <text name="phone" label="Phone"/>
-      <text name="email" label="Email"/>
-		</elements>
-	</objectType>
-	
 </objectTypes>
 
 
