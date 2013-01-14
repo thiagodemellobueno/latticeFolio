@@ -1,43 +1,43 @@
 @font-face {
   font-family: PTSans;
-  src:  url("application/resources/fonts/ptsans/PTS55F-webfont.eot");
-  src:  url("application/resources/fonts/ptsans/PTS55F-webfont.eot?#iefix") format("eot"),
-        url("application/resources/fonts/ptsans/PTS55F-webfont.ttf") format("truetype"),
-        url("application/resources/fonts/ptsans/PTS55F-webfont.woff") format("woff"),
-        url("application/resources/fonts/ptsans/PTS55F-webfont.svg#ptsans") format("svg");
+  src:  url("../fonts/ptsans/PTS55F-webfont.eot");
+  src:  url("../fonts/ptsans/PTS55F-webfont.eot?#iefix") format("eot"),
+        url("../fonts/ptsans/PTS55F-webfont.ttf") format("truetype"),
+        url("../fonts/ptsans/PTS55F-webfont.woff") format("woff"),
+        url("../fonts/ptsans/PTS55F-webfont.svg#ptsans") format("svg");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: PTSans;
-  src:  url("application/resources/fonts/ptsans/PTS75F-webfont.eot");
-  src:  url("application/resources/fonts/ptsans/PTS75F-webfont.eot?#iefix") format("embedded-opentype"),
-        url("application/resources/fonts/ptsans/PTS75F-webfont.ttf") format("truetype"),
-        url("application/resources/fonts/ptsans/PTS75F-webfont.woff") format("woff"),
-        url("application/resources/fonts/ptsans/PTS75F-webfont.svg#ptsansBold") format("svg");
+  src:  url("../fonts/ptsans/PTS75F-webfont.eot");
+  src:  url("../fonts/ptsans/PTS75F-webfont.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ptsans/PTS75F-webfont.ttf") format("truetype"),
+        url("../fonts/ptsans/PTS75F-webfont.woff") format("woff"),
+        url("../fonts/ptsans/PTS75F-webfont.svg#ptsansBold") format("svg");
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: PTSans;
-  src:  url("application/resources/fonts/ptsans/PTS56F-webfont.eot");
-  src:  url("application/resources/fonts/ptsans/PTS56F-webfont.eot?#iefix") format("embedded-opentype"),
-        url("application/resources/fonts/ptsans/PTS56F-webfont.ttf") format("truetype"),
-        url("application/resources/fonts/ptsans/PTS56F-webfont.woff") format("woff"),
-        url("application/resources/fonts/ptsans/PTS56F-webfont.svg#ptsansItalic") format("svg");
+  src:  url("../fonts/ptsans/PTS56F-webfont.eot");
+  src:  url("../fonts/ptsans/PTS56F-webfont.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ptsans/PTS56F-webfont.ttf") format("truetype"),
+        url("../fonts/ptsans/PTS56F-webfont.woff") format("woff"),
+        url("../fonts/ptsans/PTS56F-webfont.svg#ptsansItalic") format("svg");
   font-style: italic;
   font-weight: 400;
 }
 
 @font-face {
   font-family: PTSans;
-  src:  url("application/resources/fonts/ptsans/PTS76F-webfont.eot");
-  src:  url("application/resources/fonts/ptsans/PTS76F-webfont.eot?#iefix") format("embedded-opentype"),
-        url("application/resources/fonts/ptsans/PTS76F-webfont.ttf") format("truetype"),
-        url("application/resources/fonts/ptsans/PTS76F-webfont.woff") format("woff"),
-        url("application/resources/fonts/ptsans/PTS76F-webfont.svg#ptsansBoldItalic") format("svg");
+  src:  url("../fonts/ptsans/PTS76F-webfont.eot");
+  src:  url("../fonts/ptsans/PTS76F-webfont.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ptsans/PTS76F-webfont.ttf") format("truetype"),
+        url("../fonts/ptsans/PTS76F-webfont.woff") format("woff"),
+        url("../fonts/ptsans/PTS76F-webfont.svg#ptsansBoldItalic") format("svg");
   font-style: italic;
   font-weight: 700;
 }
