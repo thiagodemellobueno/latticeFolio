@@ -1,3 +1,4 @@
-# Kohana PHP Framework, version 3.1 (release)
 
-This is the current release version of [Kohana](http://kohanaframework.org/).
+#latticeFolio a general purpose, open source portfolio made with the Lattice CMS/Framework
+#http://github.com/madeofpeople/latticeFolio
+#http://github.com/deepwinter/lattice
