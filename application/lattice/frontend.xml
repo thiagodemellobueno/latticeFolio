@@ -3,35 +3,16 @@
 
 <configuration>
 
-  <view name="artists">
-    <includeData from="represented-artists" label="representedArtists"/>
-    <includeData from="works-available-artists" label="worksAvailableArtists"/>
+  <view name="homepage">
   </view>
 
-  <view name="artist">
-    <includeData from="parent" label="works" objectTypeFilter="works">
-      <includeData from="parent" label="work" objectTypeFilter="work"/>
-    </includeData>
-    <includeData from="parent" label="cvListing" objectTypeFilter="cvListing"/>
+  <view name="events">
   </view>
 
-  <view name="exhibitions">
-    <includeData from="parent" label="exhibition" objectTypeFilter="exhibition"/>
-    <includeData from="older-exhibitions" label="olderExhibitions"/>
+  <view name="article">
+    <includeData from="parent" objectTypeFilter="imageGallery" label="imageGalleries"/>
+    <includeData from="parent" objectTypeFilter="resources" label="resources"/>
   </view>
-
-  <view name="news">
-    <includeData from="parent" label="newsItem" objectTypeFilter="newsItem"/>
-  </view>
-
-  <view name="fairs">
-    <includeData from="parent" label="fairItem" objectTypeFilter="newsItem"/>
-  </view>
-
-  <view name="press">
-    <includeData from="parent" label="pressItem" objectTypeFilter="pressItem"/>
-  </view>
-
 
 </configuration>
 
