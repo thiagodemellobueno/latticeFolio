@@ -33,11 +33,9 @@
 
 <title><?=Kohana::config('site.title');?> <?=($seoTitle)?$seoTitle:latticeview::initialObject()->title;?></title>
 
-    <!-- html 5 boilerplate -->
-    <link rel="stylesheet" href="resources/css/normalize.css">
 <!--
-    <link rel="stylesheet" href="resources/css/main.css">
-    <script src="resources/js/vendor/modernizr-2.6.2.min.js"></script>
+  Resources, css and js:
+  See application/config/LayoutPublic.php for details
 -->
   <?=$stylesheet;?>
   <?=$javascript;?>
